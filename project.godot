@@ -79,3 +79,4 @@ p2_drop={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+environment/defaults/default_clear_color=Color(0.129412, 0.121569, 0.188235, 1)
