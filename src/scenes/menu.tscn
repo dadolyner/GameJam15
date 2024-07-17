@@ -1,21 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://su00web4474v"]
+[gd_scene load_steps=5 format=3 uid="uid://su00web4474v"]
 
 [ext_resource type="Script" path="res://src/scripts/menu.gd" id="1_g0knv"]
-
-[sub_resource type="SystemFont" id="SystemFont_84ip8"]
-font_names = PackedStringArray("RuneScape UF")
+[ext_resource type="FontFile" uid="uid://ckc2vx5rrmxen" path="res://assets/CustomFont.ttf" id="1_vxhyc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_frkq8"]
 bg_color = Color(0.6, 0.6, 0.6, 0.160784)
 
-[sub_resource type="SystemFont" id="SystemFont_0tm75"]
-font_names = PackedStringArray("RuneScape UF")
-
 [sub_resource type="Theme" id="Theme_c4um7"]
-default_font = SubResource("SystemFont_0tm75")
-default_font_size = 32
+default_font = ExtResource("1_vxhyc")
+default_font_size = 48
 Button/font_sizes/font_size = 48
-Button/fonts/font = SubResource("SystemFont_84ip8")
+Button/fonts/font = ExtResource("1_vxhyc")
 Button/styles/normal = SubResource("StyleBoxFlat_frkq8")
 
 [node name="Menu" type="Control"]
