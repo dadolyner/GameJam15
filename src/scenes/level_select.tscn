@@ -1,6 +1,7 @@
-[gd_scene load_steps=21 format=3 uid="uid://brc2kc8sdc6xs"]
+[gd_scene load_steps=18 format=3 uid="uid://brc2kc8sdc6xs"]
 
 [ext_resource type="Texture2D" uid="uid://kuo1rbdycuo1" path="res://assets/level_select_regions/Region_1.png" id="1_1nmrw"]
+[ext_resource type="Theme" uid="uid://dexwv64461y3i" path="res://assets/TextTheme.tres" id="1_clq5w"]
 [ext_resource type="Script" path="res://src/scripts/level_select.gd" id="1_y0tko"]
 [ext_resource type="Texture2D" uid="uid://cfj6vhqvdvmnq" path="res://assets/level_select_regions/Region_1hover.png" id="2_8d1hl"]
 [ext_resource type="Texture2D" uid="uid://btr83tgtfp84d" path="res://assets/level_select_regions/Region_2.png" id="2_054jm"]
@@ -17,23 +18,6 @@
 [ext_resource type="Texture2D" uid="uid://bljdmm5d5vy23" path="res://assets/level_select_regions/Region_4hover.png" id="11_6ogxy"]
 [ext_resource type="Texture2D" uid="uid://deylvxhktq72g" path="res://assets/level_select_regions/Region_5hover.png" id="14_rwo2b"]
 
-[sub_resource type="SystemFont" id="SystemFont_84ip8"]
-font_names = PackedStringArray("RuneScape UF")
-subpixel_positioning = 0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_frkq8"]
-bg_color = Color(0.6, 0.6, 0.6, 0.160784)
-
-[sub_resource type="SystemFont" id="SystemFont_0tm75"]
-font_names = PackedStringArray("RuneScape UF")
-
-[sub_resource type="Theme" id="Theme_c4um7"]
-default_font = SubResource("SystemFont_0tm75")
-default_font_size = 32
-Button/font_sizes/font_size = 48
-Button/fonts/font = SubResource("SystemFont_84ip8")
-Button/styles/normal = SubResource("StyleBoxFlat_frkq8")
-
 [node name="LevelSelect" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -41,7 +25,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = SubResource("Theme_c4um7")
+theme = ExtResource("1_clq5w")
 script = ExtResource("1_y0tko")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]

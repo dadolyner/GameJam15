@@ -1,0 +1,13 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://dexwv64461y3i"]
+
+[ext_resource type="FontFile" uid="uid://ckc2vx5rrmxen" path="res://assets/CustomFont.ttf" id="1_3p404"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_frkq8"]
+bg_color = Color(0.6, 0.6, 0.6, 0.160784)
+
+[resource]
+default_font = ExtResource("1_3p404")
+default_font_size = 48
+Button/font_sizes/font_size = 48
+Button/fonts/font = ExtResource("1_3p404")
+Button/styles/normal = SubResource("StyleBoxFlat_frkq8")
