@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@onready var player = $"."
+@onready var player: CharacterBody2D = $"."
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var collision_shape: CollisionShape2D = $CollisionShape2D
 @onready var jump_sound: AudioStreamPlayer = $JumpSound

@@ -1,19 +1,15 @@
 extends Control
 
+@onready var start_button: Button = $VBoxContainer/StartButton
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	$VBoxContainer/StartButton.grab_focus()
+func _ready() -> void:
+	start_button.grab_focus()
 
-
-func _on_start_button_pressed():
-	#Spremenit argument, ko bom imel dejanski 1st scene.
-	get_tree().change_scene_to_file("res://src/scenes/level_select.tscn") 
+func _on_start_button_pressed() -> void:
+	get_tree().change_scene_to_file(Globals.menu.levels)
 	
+func _on_options_button_pressed() -> void:
+	get_tree().change_scene_to_file(Globals.menu.options)
 
-func _on_options_button_pressed():
-	get_tree().change_scene_to_file("res://src/scenes/menu.tscn") 
-
-
-func _on_quit_button_pressed():
+func _on_quit_button_pressed() -> void:
 	get_tree().quit()

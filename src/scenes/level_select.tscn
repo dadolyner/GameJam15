@@ -1,7 +1,7 @@
-[gd_scene load_steps=18 format=3 uid="uid://brc2kc8sdc6xs"]
+[gd_scene load_steps=18 format=3 uid="uid://csb1pfaq21rj6"]
 
 [ext_resource type="Texture2D" uid="uid://kuo1rbdycuo1" path="res://assets/level_select_regions/Region_1.png" id="1_1nmrw"]
-[ext_resource type="Theme" uid="uid://dexwv64461y3i" path="res://assets/TextTheme.tres" id="1_clq5w"]
+[ext_resource type="Theme" uid="uid://bacq1pf3p10l4" path="res://assets/TextTheme.tres" id="1_clq5w"]
 [ext_resource type="Script" path="res://src/scripts/level_select.gd" id="1_y0tko"]
 [ext_resource type="Texture2D" uid="uid://cfj6vhqvdvmnq" path="res://assets/level_select_regions/Region_1hover.png" id="2_8d1hl"]
 [ext_resource type="Texture2D" uid="uid://btr83tgtfp84d" path="res://assets/level_select_regions/Region_2.png" id="2_054jm"]
@@ -18,7 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://bljdmm5d5vy23" path="res://assets/level_select_regions/Region_4hover.png" id="11_6ogxy"]
 [ext_resource type="Texture2D" uid="uid://deylvxhktq72g" path="res://assets/level_select_regions/Region_5hover.png" id="14_rwo2b"]
 
-[node name="LevelSelect" type="Control"]
+[node name="LevelSelect" type="Control" node_paths=PackedStringArray("regions")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -27,6 +27,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_clq5w")
 script = ExtResource("1_y0tko")
+regions = [NodePath("Region1Button"), NodePath("Region2Button"), NodePath("Region3Button"), NodePath("Region4Button"), NodePath("Region5Button")]
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -40,22 +41,16 @@ grow_vertical = 2
 layout_mode = 2
 color = Color(0.141176, 0, 0.282353, 0.780392)
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
+[node name="RichTextLabel" type="Label" parent="."]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.346354
-anchor_top = 0.100309
-anchor_right = 0.632813
-anchor_bottom = 0.199074
-offset_right = -165.0
-offset_bottom = -32.0
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 50.0
+offset_bottom = 98.0
 grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(2, 2)
+theme_override_font_sizes/font_size = 64
 text = "LEVEL SELECT"
-fit_content = true
-scroll_active = false
-metadata/_edit_use_anchors_ = true
+horizontal_alignment = 1
 
 [node name="Region1Button" type="TextureButton" parent="."]
 layout_mode = 1
@@ -69,27 +64,21 @@ texture_hover = ExtResource("2_8d1hl")
 texture_click_mask = ExtResource("2_v76sl")
 stretch_mode = 0
 
-[node name="RichTextLabel1" type="RichTextLabel" parent="Region1Button"]
+[node name="RichTextLabel1" type="Label" parent="Region1Button"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.441818
 anchor_top = 0.771186
 anchor_right = 0.441818
 anchor_bottom = 0.771186
-offset_left = -1.49988
-offset_top = -63.5003
-offset_right = 8.50012
-offset_bottom = -31.5003
+offset_left = 21.7782
+offset_top = -97.0002
+offset_right = 36.7782
+offset_bottom = -49.0002
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2, 2)
-mouse_filter = 2
 text = "1"
-fit_content = true
-scroll_active = false
-autowrap_mode = 0
-deselect_on_focus_loss_enabled = false
-drag_and_drop_selection_enabled = false
 
 [node name="Region2Button" type="TextureButton" parent="."]
 layout_mode = 0
@@ -103,22 +92,20 @@ texture_click_mask = ExtResource("4_nfuwv")
 stretch_mode = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="Region2Button"]
+[node name="RichTextLabel2" type="Label" parent="Region2Button"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.498744
-anchor_top = 0.724299
-anchor_right = 0.498744
-anchor_bottom = 0.724299
+anchor_left = 0.432161
+anchor_top = 0.625701
+anchor_right = 0.432161
+anchor_bottom = 0.692991
 offset_top = -64.0
 offset_right = 32.0
 offset_bottom = -32.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2, 2)
-mouse_filter = 2
 text = "2"
-fit_content = true
 metadata/_edit_use_anchors_ = true
 
 [node name="Region3Button" type="TextureButton" parent="."]
@@ -134,21 +121,19 @@ texture_click_mask = ExtResource("6_jgkxy")
 stretch_mode = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="RichTextLabel3" type="RichTextLabel" parent="Region3Button"]
+[node name="RichTextLabel3" type="Label" parent="Region3Button"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.415282
-anchor_top = 0.46831
-anchor_right = 0.415282
-anchor_bottom = 0.46831
+anchor_left = 0.425912
+anchor_top = 0.378169
+anchor_right = 0.425912
+anchor_bottom = 0.428873
 offset_top = -64.0
 offset_right = 32.0
 offset_bottom = -32.0
 grow_horizontal = 2
 scale = Vector2(2, 2)
-mouse_filter = 2
 text = "3"
-fit_content = true
 metadata/_edit_use_anchors_ = true
 
 [node name="Region4Button" type="TextureButton" parent="."]
@@ -163,22 +148,20 @@ texture_click_mask = ExtResource("8_nwq5b")
 stretch_mode = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="RichTextLabel4" type="RichTextLabel" parent="Region4Button"]
+[node name="RichTextLabel4" type="Label" parent="Region4Button"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.411483
-anchor_top = 0.561753
-anchor_right = 0.411483
-anchor_bottom = 0.561753
+anchor_left = 0.378468
+anchor_top = 0.488845
+anchor_right = 0.412918
+anchor_bottom = 0.546215
 offset_top = -64.0
 offset_right = 16.0
 offset_bottom = -32.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2, 2)
-mouse_filter = 2
 text = "4"
-fit_content = true
 metadata/_edit_use_anchors_ = true
 
 [node name="Region5Button" type="TextureButton" parent="."]
@@ -194,7 +177,7 @@ texture_click_mask = ExtResource("10_r4f5l")
 stretch_mode = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="RichTextLabel5" type="RichTextLabel" parent="Region5Button"]
+[node name="RichTextLabel5" type="Label" parent="Region5Button"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.295964
@@ -207,9 +190,7 @@ offset_bottom = -36.7005
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2, 2)
-mouse_filter = 2
 text = "5"
-fit_content = true
 metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="Region1Button" to="." method="_on_region_1_button_pressed"]
