@@ -83,58 +83,19 @@ anchor_bottom = 0.541667
 texture_normal = ExtResource("1_1nmrw")
 texture_hover = ExtResource("2_8d1hl")
 texture_click_mask = ExtResource("2_v76sl")
+stretch_mode = 0
 
-[node name="Region2Button" type="TextureButton" parent="."]
-layout_mode = 0
-offset_left = 485.0
-offset_top = 317.0
-offset_right = 883.0
-offset_bottom = 531.0
-texture_normal = ExtResource("2_054jm")
-texture_hover = ExtResource("5_pt5dk")
-texture_click_mask = ExtResource("4_nfuwv")
-
-[node name="Region3Button" type="TextureButton" parent="."]
-layout_mode = 0
-offset_left = 374.0
-offset_top = 213.0
-offset_right = 675.0
-offset_bottom = 497.0
-texture_normal = ExtResource("3_e5mjy")
-texture_hover = ExtResource("8_up302")
-texture_click_mask = ExtResource("6_jgkxy")
-
-[node name="Region4Button" type="TextureButton" parent="."]
-layout_mode = 0
-offset_left = 262.0
-offset_top = 168.0
-offset_right = 471.0
-offset_bottom = 419.0
-texture_normal = ExtResource("4_raoq8")
-texture_hover = ExtResource("11_6ogxy")
-texture_click_mask = ExtResource("8_nwq5b")
-
-[node name="Region5Button" type="TextureButton" parent="."]
-layout_mode = 0
-offset_left = 201.0
-offset_top = 360.0
-offset_right = 424.0
-offset_bottom = 550.0
-texture_normal = ExtResource("5_58ihy")
-texture_hover = ExtResource("14_rwo2b")
-texture_click_mask = ExtResource("10_r4f5l")
-
-[node name="RichTextLabel1" type="RichTextLabel" parent="."]
+[node name="RichTextLabel1" type="RichTextLabel" parent="Region1Button"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.441818
 anchor_top = 0.771186
 anchor_right = 0.441818
 anchor_bottom = 0.771186
-offset_left = 226.025
-offset_top = -252.729
-offset_right = 234.025
-offset_bottom = -220.729
+offset_left = -1.49988
+offset_top = -63.5003
+offset_right = 8.50012
+offset_bottom = -31.5003
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2, 2)
@@ -146,17 +107,28 @@ autowrap_mode = 0
 deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+[node name="Region2Button" type="TextureButton" parent="."]
+layout_mode = 0
+anchor_left = 0.421007
+anchor_top = 0.489198
+anchor_right = 0.766493
+anchor_bottom = 0.819444
+texture_normal = ExtResource("2_054jm")
+texture_hover = ExtResource("5_pt5dk")
+texture_click_mask = ExtResource("4_nfuwv")
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Region2Button"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.498744
 anchor_top = 0.724299
 anchor_right = 0.498744
 anchor_bottom = 0.724299
-offset_left = 108.947
-offset_top = -61.3458
-offset_right = 140.947
-offset_bottom = -29.3458
+offset_top = -64.0
+offset_right = 32.0
+offset_bottom = -32.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2, 2)
@@ -165,36 +137,58 @@ text = "2"
 fit_content = true
 metadata/_edit_use_anchors_ = true
 
-[node name="RichTextLabel5" type="RichTextLabel" parent="."]
+[node name="Region3Button" type="TextureButton" parent="."]
+layout_mode = 0
+anchor_left = 0.324653
+anchor_top = 0.328704
+anchor_right = 0.585938
+anchor_bottom = 0.766975
+offset_bottom = 3.05176e-05
+texture_normal = ExtResource("3_e5mjy")
+texture_hover = ExtResource("8_up302")
+texture_click_mask = ExtResource("6_jgkxy")
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="Region3Button"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.295964
-anchor_top = 0.781058
-anchor_right = 0.295964
-anchor_bottom = 0.781058
-offset_left = -73.9507
-offset_top = -71.1259
-offset_right = -54.0525
-offset_bottom = -34.4254
+anchor_left = 0.415282
+anchor_top = 0.46831
+anchor_right = 0.415282
+anchor_bottom = 0.46831
+offset_top = -64.0
+offset_right = 32.0
+offset_bottom = -32.0
 grow_horizontal = 2
-grow_vertical = 2
 scale = Vector2(2, 2)
 mouse_filter = 2
-text = "5"
+text = "3"
 fit_content = true
 metadata/_edit_use_anchors_ = true
 
-[node name="RichTextLabel4" type="RichTextLabel" parent="."]
+[node name="Region4Button" type="TextureButton" parent="."]
+layout_mode = 0
+anchor_left = 0.227431
+anchor_top = 0.259259
+anchor_right = 0.408854
+anchor_bottom = 0.646605
+texture_normal = ExtResource("4_raoq8")
+texture_hover = ExtResource("11_6ogxy")
+texture_click_mask = ExtResource("8_nwq5b")
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="Region4Button"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.411483
 anchor_top = 0.561753
 anchor_right = 0.411483
 anchor_bottom = 0.561753
-offset_left = -126.029
-offset_top = -119.016
-offset_right = -110.029
-offset_bottom = -87.0159
+offset_top = -64.0
+offset_right = 16.0
+offset_bottom = -32.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2, 2)
@@ -203,21 +197,34 @@ text = "4"
 fit_content = true
 metadata/_edit_use_anchors_ = true
 
-[node name="RichTextLabel3" type="RichTextLabel" parent="."]
+[node name="Region5Button" type="TextureButton" parent="."]
+layout_mode = 0
+anchor_left = 0.174479
+anchor_top = 0.555556
+anchor_right = 0.368056
+anchor_bottom = 0.848765
+offset_top = -3.05176e-05
+texture_normal = ExtResource("5_58ihy")
+texture_hover = ExtResource("14_rwo2b")
+texture_click_mask = ExtResource("10_r4f5l")
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel5" type="RichTextLabel" parent="Region5Button"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.415282
-anchor_top = 0.46831
-anchor_right = 0.415282
-anchor_bottom = 0.46831
-offset_left = 20.5947
-offset_top = -21.4648
-offset_right = 52.5947
-offset_bottom = 10.5352
+anchor_left = 0.295964
+anchor_top = 0.781058
+anchor_right = 0.295964
+anchor_bottom = 0.781058
+offset_top = -73.4011
+offset_right = 19.8982
+offset_bottom = -36.7005
 grow_horizontal = 2
+grow_vertical = 2
 scale = Vector2(2, 2)
 mouse_filter = 2
-text = "3"
+text = "5"
 fit_content = true
 metadata/_edit_use_anchors_ = true
 
