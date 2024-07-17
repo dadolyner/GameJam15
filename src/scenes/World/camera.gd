@@ -6,6 +6,7 @@ extends Camera2D
 @onready var player_2: CharacterBody2D = $"../Player_2"
 
 @export var players: Array[CharacterBody2D]
+@export var margin = 50
 
 func _ready():
 	add_camera_target(player_1)
@@ -14,7 +15,6 @@ func _ready():
 	
 func _process(_delta):
 	update_camera_position()
-
 
 func add_camera_target(player):
 	if not player in players:
@@ -30,10 +30,8 @@ func set_camera_limits():
 
 	var top_left = tilemap.map_to_local(map_bounds.position)
 	var bottom_right = tilemap.map_to_local(map_bounds.position + map_bounds.size)
-
-	limit_top = top_left.y
+	
 	limit_right = bottom_right.x + (tile_size.x * 4)
-	limit_bottom = bottom_right.y
 	limit_left = top_left.x - (tile_size.x * 4)
 
 func update_camera_position():
@@ -42,12 +40,13 @@ func update_camera_position():
 	
 	var player_1_pos = players[0].global_position
 	var player_2_pos = players[1].global_position
-	
 	var midpoint = (player_1_pos + player_2_pos) / 2
 	
-	var viewport_size = tilemap.get_used_rect()
+	var tilemap_rect = tilemap.get_used_rect()
+	var tilemap_bottom_right = tilemap.map_to_local(tilemap_rect.position + tilemap_rect.size)
+	var tilemap_center = tilemap_bottom_right.y / 2
 	
 	position = Vector2(
-		clamp(midpoint.x, limit_left + viewport_size.position.x / 2, limit_right - viewport_size.position.x / 2),
-		0
+		clamp(midpoint.x, limit_left + tilemap_rect.position.x / 2, limit_right - tilemap_rect.position.x / 2),
+		tilemap_center
 	)
