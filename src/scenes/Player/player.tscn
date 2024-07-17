@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://dn5bj8h2j517g"]
+
+[ext_resource type="Script" path="res://src/scenes/Player/player.gd" id="1_ivyjs"]
+[ext_resource type="AudioStream" uid="uid://dvm5racorw3ql" path="res://assets/Pixel Adventure/Sounds/jump.wav" id="7_omhf7"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xx8gd"]
+radius = 5.0
+height = 14.0
+
+[node name="Player" type="CharacterBody2D"]
+z_index = 10
+collision_layer = 2
+collision_mask = 3
+floor_constant_speed = true
+script = ExtResource("1_ivyjs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("CapsuleShape2D_xx8gd")
+one_way_collision = true
+
+[node name="JumpSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_omhf7")
+volume_db = -10.0
+bus = &"SFX"
