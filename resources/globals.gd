@@ -2,7 +2,7 @@ extends Node
 
 const menu: Dictionary = {
 	"levels": "res://src/scenes/level_select.tscn",
-	"options": "res://src/scenes/menu.tscn"
+	"options": "res://src/scenes/options.tscn"
 }
 
 const regions: Array[Dictionary] = [
