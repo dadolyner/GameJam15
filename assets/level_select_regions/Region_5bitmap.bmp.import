@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://b5aseb384s2gi"
+path="res://.godot/imported/Region_5bitmap.bmp-f8f87b1e19f847f55ba4543c82c83a90.res"
+
+[deps]
+
+source_file="res://assets/level_select_regions/Region_5bitmap.bmp"
+dest_files=["res://.godot/imported/Region_5bitmap.bmp-f8f87b1e19f847f55ba4543c82c83a90.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

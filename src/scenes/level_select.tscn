@@ -1,0 +1,224 @@
+[gd_scene load_steps=21 format=3 uid="uid://brc2kc8sdc6xs"]
+
+[ext_resource type="Texture2D" uid="uid://kuo1rbdycuo1" path="res://assets/level_select_regions/Region_1.png" id="1_1nmrw"]
+[ext_resource type="Script" path="res://src/scripts/level_select.gd" id="1_y0tko"]
+[ext_resource type="Texture2D" uid="uid://cfj6vhqvdvmnq" path="res://assets/level_select_regions/Region_1hover.png" id="2_8d1hl"]
+[ext_resource type="Texture2D" uid="uid://btr83tgtfp84d" path="res://assets/level_select_regions/Region_2.png" id="2_054jm"]
+[ext_resource type="BitMap" uid="uid://dax3qkgc52ovh" path="res://assets/level_select_regions/Region_1bitmap.bmp" id="2_v76sl"]
+[ext_resource type="Texture2D" uid="uid://o6sw4mpurgte" path="res://assets/level_select_regions/Region_3.png" id="3_e5mjy"]
+[ext_resource type="BitMap" uid="uid://ce4msghr22i1g" path="res://assets/level_select_regions/Region_2bitmap.bmp" id="4_nfuwv"]
+[ext_resource type="Texture2D" uid="uid://jqdwq4sr2rqe" path="res://assets/level_select_regions/Region_4.png" id="4_raoq8"]
+[ext_resource type="Texture2D" uid="uid://bpcqm6pyl8lnx" path="res://assets/level_select_regions/Region_5.png" id="5_58ihy"]
+[ext_resource type="Texture2D" uid="uid://brgutre333188" path="res://assets/level_select_regions/Region_2hover.png" id="5_pt5dk"]
+[ext_resource type="BitMap" uid="uid://ciwdkfihplrwv" path="res://assets/level_select_regions/Region_3bitmap.bmp" id="6_jgkxy"]
+[ext_resource type="BitMap" uid="uid://bgcdrpup66vy1" path="res://assets/level_select_regions/Region_4bitmap.bmp" id="8_nwq5b"]
+[ext_resource type="Texture2D" uid="uid://dcqe2qak4uxtu" path="res://assets/level_select_regions/Region_3hover.png" id="8_up302"]
+[ext_resource type="BitMap" uid="uid://b5aseb384s2gi" path="res://assets/level_select_regions/Region_5bitmap.bmp" id="10_r4f5l"]
+[ext_resource type="Texture2D" uid="uid://bljdmm5d5vy23" path="res://assets/level_select_regions/Region_4hover.png" id="11_6ogxy"]
+[ext_resource type="Texture2D" uid="uid://deylvxhktq72g" path="res://assets/level_select_regions/Region_5hover.png" id="14_rwo2b"]
+
+[sub_resource type="SystemFont" id="SystemFont_84ip8"]
+font_names = PackedStringArray("RuneScape UF")
+subpixel_positioning = 0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_frkq8"]
+bg_color = Color(0.6, 0.6, 0.6, 0.160784)
+
+[sub_resource type="SystemFont" id="SystemFont_0tm75"]
+font_names = PackedStringArray("RuneScape UF")
+
+[sub_resource type="Theme" id="Theme_c4um7"]
+default_font = SubResource("SystemFont_0tm75")
+default_font_size = 32
+Button/font_sizes/font_size = 48
+Button/fonts/font = SubResource("SystemFont_84ip8")
+Button/styles/normal = SubResource("StyleBoxFlat_frkq8")
+
+[node name="LevelSelect" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_c4um7")
+script = ExtResource("1_y0tko")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer"]
+layout_mode = 2
+color = Color(0.141176, 0, 0.282353, 0.780392)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.346354
+anchor_top = 0.100309
+anchor_right = 0.632813
+anchor_bottom = 0.199074
+offset_right = -165.0
+offset_bottom = -32.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+text = "LEVEL SELECT"
+fit_content = true
+scroll_active = false
+metadata/_edit_use_anchors_ = true
+
+[node name="Region1Button" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.532986
+anchor_top = 0.268519
+anchor_right = 0.771701
+anchor_bottom = 0.541667
+texture_normal = ExtResource("1_1nmrw")
+texture_hover = ExtResource("2_8d1hl")
+texture_click_mask = ExtResource("2_v76sl")
+
+[node name="Region2Button" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 485.0
+offset_top = 317.0
+offset_right = 883.0
+offset_bottom = 531.0
+texture_normal = ExtResource("2_054jm")
+texture_hover = ExtResource("5_pt5dk")
+texture_click_mask = ExtResource("4_nfuwv")
+
+[node name="Region3Button" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 374.0
+offset_top = 213.0
+offset_right = 675.0
+offset_bottom = 497.0
+texture_normal = ExtResource("3_e5mjy")
+texture_hover = ExtResource("8_up302")
+texture_click_mask = ExtResource("6_jgkxy")
+
+[node name="Region4Button" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 262.0
+offset_top = 168.0
+offset_right = 471.0
+offset_bottom = 419.0
+texture_normal = ExtResource("4_raoq8")
+texture_hover = ExtResource("11_6ogxy")
+texture_click_mask = ExtResource("8_nwq5b")
+
+[node name="Region5Button" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 201.0
+offset_top = 360.0
+offset_right = 424.0
+offset_bottom = 550.0
+texture_normal = ExtResource("5_58ihy")
+texture_hover = ExtResource("14_rwo2b")
+texture_click_mask = ExtResource("10_r4f5l")
+
+[node name="RichTextLabel1" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.441818
+anchor_top = 0.771186
+anchor_right = 0.441818
+anchor_bottom = 0.771186
+offset_left = 226.025
+offset_top = -252.729
+offset_right = 234.025
+offset_bottom = -220.729
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+mouse_filter = 2
+text = "1"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.498744
+anchor_top = 0.724299
+anchor_right = 0.498744
+anchor_bottom = 0.724299
+offset_left = 108.947
+offset_top = -61.3458
+offset_right = 140.947
+offset_bottom = -29.3458
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+mouse_filter = 2
+text = "2"
+fit_content = true
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel5" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.295964
+anchor_top = 0.781058
+anchor_right = 0.295964
+anchor_bottom = 0.781058
+offset_left = -73.9507
+offset_top = -71.1259
+offset_right = -54.0525
+offset_bottom = -34.4254
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+mouse_filter = 2
+text = "5"
+fit_content = true
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.411483
+anchor_top = 0.561753
+anchor_right = 0.411483
+anchor_bottom = 0.561753
+offset_left = -126.029
+offset_top = -119.016
+offset_right = -110.029
+offset_bottom = -87.0159
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+mouse_filter = 2
+text = "4"
+fit_content = true
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.415282
+anchor_top = 0.46831
+anchor_right = 0.415282
+anchor_bottom = 0.46831
+offset_left = 20.5947
+offset_top = -21.4648
+offset_right = 52.5947
+offset_bottom = 10.5352
+grow_horizontal = 2
+scale = Vector2(2, 2)
+mouse_filter = 2
+text = "3"
+fit_content = true
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Region1Button" to="." method="_on_region_1_button_pressed"]
