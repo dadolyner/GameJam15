@@ -1,0 +1,207 @@
+[gd_scene load_steps=9 format=3 uid="uid://hysujlmp4lpo"]
+
+[ext_resource type="FontFile" uid="uid://ckc2vx5rrmxen" path="res://assets/CustomFont.ttf" id="1_wpuq6"]
+[ext_resource type="Script" path="res://src/scripts/options.gd" id="2_wrl2x"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_frkq8"]
+bg_color = Color(0.6, 0.6, 0.6, 0.160784)
+
+[sub_resource type="Theme" id="Theme_c4um7"]
+default_font = ExtResource("1_wpuq6")
+default_font_size = 48
+Button/font_sizes/font_size = 48
+Button/fonts/font = ExtResource("1_wpuq6")
+Button/styles/normal = SubResource("StyleBoxFlat_frkq8")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3bf3b"]
+bg_color = Color(0.58371, 0.60767, 0.589574, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 9
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ke8tk"]
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 10
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_j551a"]
+color = Color(0.222824, 0.212568, 0.17804, 1)
+grow_begin = 0.0
+grow_end = 0.0
+thickness = 20
+
+[sub_resource type="Theme" id="Theme_eimjh"]
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_3bf3b")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_ke8tk")
+HSlider/styles/slider = SubResource("StyleBoxLine_j551a")
+
+[node name="Options" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_c4um7")
+script = ExtResource("2_wrl2x")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer"]
+layout_mode = 2
+color = Color(0.141176, 0, 0.282353, 0.780392)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.167187
+anchor_top = 0.111111
+anchor_right = 0.860937
+anchor_bottom = 0.909722
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 10
+
+[node name="VolumeLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Volume"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="VolumePower" type="Label" parent="VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="HSlider" type="HSlider" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme = SubResource("Theme_eimjh")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 2
+
+[node name="Player1Controls3" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_constants/separation = 15
+
+[node name="Player1Label" type="Label" parent="VBoxContainer/HBoxContainer/HBoxContainer/Player1Controls3"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 1
+text = "Player 1:"
+horizontal_alignment = 3
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer/HBoxContainer/HBoxContainer/Player1Controls3"]
+layout_mode = 2
+theme_override_constants/h_separation = 15
+columns = 2
+
+[node name="Move left" type="Label" parent="VBoxContainer/HBoxContainer/HBoxContainer/Player1Controls3/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Move left:"
+
+[node name="Move left control" type="Label" parent="VBoxContainer/HBoxContainer/HBoxContainer/Player1Controls3/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "A"
+
+[node name="Move right" type="Label" parent="VBoxContainer/HBoxContainer/HBoxContainer/Player1Controls3/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Move right:"
+
+[node name="Move right control" type="Label" parent="VBoxContainer/HBoxContainer/HBoxContainer/Player1Controls3/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "D"
+
+[node name="Jump" type="Label" parent="VBoxContainer/HBoxContainer/HBoxContainer/Player1Controls3/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Jump:"
+
+[node name="Jump control" type="Label" parent="VBoxContainer/HBoxContainer/HBoxContainer/Player1Controls3/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "W"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 2
+
+[node name="Player2Controls2" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_constants/separation = 10
+
+[node name="Player2Label" type="Label" parent="VBoxContainer/HBoxContainer/HBoxContainer2/Player2Controls2"]
+layout_mode = 2
+size_flags_horizontal = 6
+text = "Player 2:"
+
+[node name="GridContainer2" type="GridContainer" parent="VBoxContainer/HBoxContainer/HBoxContainer2/Player2Controls2"]
+layout_mode = 2
+theme_override_constants/h_separation = 15
+columns = 2
+
+[node name="Move left" type="Label" parent="VBoxContainer/HBoxContainer/HBoxContainer2/Player2Controls2/GridContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Move left:"
+
+[node name="Move left control" type="Label" parent="VBoxContainer/HBoxContainer/HBoxContainer2/Player2Controls2/GridContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Arrow left"
+
+[node name="Move right" type="Label" parent="VBoxContainer/HBoxContainer/HBoxContainer2/Player2Controls2/GridContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Move right:"
+
+[node name="Move right control" type="Label" parent="VBoxContainer/HBoxContainer/HBoxContainer2/Player2Controls2/GridContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Arrow right"
+
+[node name="Jump" type="Label" parent="VBoxContainer/HBoxContainer/HBoxContainer2/Player2Controls2/GridContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Jump:"
+
+[node name="Jump control" type="Label" parent="VBoxContainer/HBoxContainer/HBoxContainer2/Player2Controls2/GridContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Arrow up"
+
+[node name="BackButton" type="Button" parent="."]
+offset_left = 214.0
+offset_top = 486.0
+offset_right = 322.0
+offset_bottom = 534.0
+focus_neighbor_top = NodePath("../QuitButton")
+text = "BACK"
+
+[connection signal="value_changed" from="VBoxContainer/HBoxContainer2/HSlider" to="." method="_on_h_slider_value_changed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
