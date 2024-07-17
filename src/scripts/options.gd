@@ -13,7 +13,7 @@ func _process(delta):
 
 
 func _on_h_slider_value_changed(value):
-	AudioServer.set_bus_volume_db(0,value)
+	AudioServer.set_bus_volume_db(0,value-25)
 	volume_power.text = str(value)
 
 

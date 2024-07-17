@@ -196,6 +196,7 @@ theme_override_font_sizes/font_size = 32
 text = "Arrow up"
 
 [node name="BackButton" type="Button" parent="."]
+layout_mode = 0
 offset_left = 214.0
 offset_top = 486.0
 offset_right = 322.0
