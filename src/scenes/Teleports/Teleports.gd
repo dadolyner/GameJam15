@@ -1,44 +1,40 @@
 extends Area2D
 
-@onready var player_1 = $"../../../Player_1"
-@onready var player_2 = $"../../../Player_2"
-@onready var sprite = $AnimatedSprite2D
-@export var target_path: NodePath
-@onready var target = get_node(target_path)
-@export var TeleportModel: int = 0
-var isMoonOverTeleport: bool = false
-var isSunOverTeleport: bool = false
+@onready var player_1: CharacterBody2D = $"../../../Player_1"
+@onready var player_2: CharacterBody2D = $"../../../Player_2"
+@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
-var player1Position
-var player2Position
+@export var target_portal: Area2D
+@export var portal_model: int = 0
+@export var controls: PlayerControls = null
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	if(TeleportModel == 0):
-		sprite.play("moon")
-	if(TeleportModel == 1):
-		sprite.play("sun")
+var moon_over_teleport: bool = false
+var sun_over_teleport: bool = false
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	if isMoonOverTeleport and Input.is_action_just_pressed("p1_interact") and TeleportModel==0:
-		player1Position.position = target.position	
-	if isSunOverTeleport and Input.is_action_just_pressed("p2_interact") and TeleportModel==1:
-		player2Position.position = target.position
+func _ready() -> void:
+	if(portal_model == 0):
+		animated_sprite.play("moon")
+	if(portal_model == 1):
+		animated_sprite.play("sun")
 
-func _on_body_entered(body):
+func _process(_delta) -> void:
+	if moon_over_teleport and Input.is_action_just_pressed(controls.interact) and portal_model == 0:
+		player_1.position = target_portal.position	
+	if sun_over_teleport and Input.is_action_just_pressed(controls.interact) and portal_model == 1:
+		player_2.position = target_portal.position
+
+func _on_body_entered(body) -> void:
 	if(body == player_1):
-		player1Position = body
-		isMoonOverTeleport = true
+		player_1 = body
+		moon_over_teleport = true
 	if(body == player_2):
-		player2Position = body
-		isSunOverTeleport = true
+		player_2 = body
+		sun_over_teleport = true
 		
-
-func _on_body_exited(body):
+func _on_body_exited(body) -> void:
 	if(body == player_1):
-		player1Position = body
-		isMoonOverTeleport = false
+		player_1 = body
+		moon_over_teleport = false
 	if(body == player_2):
-		player2Position = body
-		isSunOverTeleport = false
+		player_2 = body
+		sun_over_teleport = false
