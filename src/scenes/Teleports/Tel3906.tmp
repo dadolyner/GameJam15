@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://vifhbo0hqobj"]
+
+[ext_resource type="Script" path="res://src/scenes/Teleports/Teleports.gd" id="1_7emgo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rng7s"]
+size = Vector2(31, 59)
+
+[node name="Teleports" type="Area2D"]
+light_mask = 3
+visibility_layer = 3
+position = Vector2(-1, 0)
+script = ExtResource("1_7emgo")
+target = NodePath(".")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(17, 29)
+shape = SubResource("RectangleShape2D_rng7s")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
