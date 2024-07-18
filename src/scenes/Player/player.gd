@@ -9,7 +9,7 @@ extends CharacterBody2D
 
 const SPEED: float = 100.0
 const JUMP_VELOCITY: float = -300.0
-const MAX_JUMPS: int = 2
+const MAX_JUMPS: int = 4
 const GRAVITY: float = 900.0
 const FALL_GRAVITY: float = 1300.0
 const INITIAL_SCALE: float = 1.0

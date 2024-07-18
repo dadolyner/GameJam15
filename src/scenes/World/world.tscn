@@ -1,6 +1,7 @@
-[gd_scene load_steps=82 format=3 uid="uid://cagi5183kdthy"]
+[gd_scene load_steps=95 format=3 uid="uid://cagi5183kdthy"]
 
 [ext_resource type="Texture2D" uid="uid://c1uc31kg0vxa5" path="res://assets/Pixel Adventure/Terrain/Terrain (16x16).png" id="1_osrnh"]
+[ext_resource type="Script" path="res://src/scenes/World/world.gd" id="1_wdp70"]
 [ext_resource type="PackedScene" uid="uid://dn5bj8h2j517g" path="res://src/scenes/Player/player.tscn" id="2_hsd2o"]
 [ext_resource type="Resource" uid="uid://c82fs61bw05df" path="res://resources/PlayerControlls/player_1_controls.tres" id="3_mov5j"]
 [ext_resource type="Resource" uid="uid://cu8eslsgqvdt0" path="res://resources/PlayerControlls/player_2_controlls.tres" id="4_1s0o3"]
@@ -15,6 +16,10 @@
 [ext_resource type="Texture2D" uid="uid://41qjmc3fpnnw" path="res://assets/Pixel Adventure/Main Characters/Mask Dude/Run (32x32).png" id="8_d80dl"]
 [ext_resource type="Texture2D" uid="uid://cssenxwxbqkh1" path="res://assets/Pixel Adventure/Main Characters/Virtual Guy/Run (32x32).png" id="8_dw68d"]
 [ext_resource type="PackedScene" uid="uid://c0qalbgmrfq2r" path="res://src/scenes/World/camera.tscn" id="15_lg08l"]
+[ext_resource type="Texture2D" uid="uid://cch3olkvdqgba" path="res://assets/objects/teleporter-moon.png" id="16_m0xje"]
+[ext_resource type="Texture2D" uid="uid://cx05xl37krlah" path="res://assets/objects/sun_teleporter.png" id="18_vcin7"]
+[ext_resource type="Texture2D" uid="uid://djvhwjdnudyvc" path="res://assets/objects/sun_teleport_reciever.png" id="19_o25qf"]
+[ext_resource type="Texture2D" uid="uid://chhpw5uklfa4t" path="res://assets/objects/moon_teleport_reciever.png" id="19_qn3o0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xx6ad"]
 resource_name = "Terrain"
@@ -987,7 +992,72 @@ animations = [{
 "speed": 20.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_j0f84"]
+atlas = ExtResource("16_m0xje")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ui08c"]
+atlas = ExtResource("16_m0xje")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yb55x"]
+atlas = ExtResource("16_m0xje")
+region = Rect2(64, 0, 32, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3nwys"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j0f84")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ui08c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yb55x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ui08c")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 7.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8dtib"]
+atlas = ExtResource("18_vcin7")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c8tbw"]
+atlas = ExtResource("18_vcin7")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rgaov"]
+atlas = ExtResource("18_vcin7")
+region = Rect2(64, 0, 32, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3l4vx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8dtib")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c8tbw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rgaov")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c8tbw")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 7.0
+}]
+
 [node name="World" type="Node2D"]
+script = ExtResource("1_wdp70")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_2umpe")
@@ -1018,3 +1088,23 @@ controls = ExtResource("4_1s0o3")
 scale = Vector2(0.6, 0.6)
 sprite_frames = SubResource("SpriteFrames_2pc8d")
 animation = &"run"
+
+[node name="MoonTeleport" type="AnimatedSprite2D" parent="."]
+position = Vector2(180, 129)
+sprite_frames = SubResource("SpriteFrames_3nwys")
+animation = &"idle"
+frame_progress = 0.20485
+
+[node name="SunTeleport" type="AnimatedSprite2D" parent="."]
+position = Vector2(237, 304)
+sprite_frames = SubResource("SpriteFrames_3l4vx")
+animation = &"idle"
+frame_progress = 0.865793
+
+[node name="MoonTeleportReciever" type="Sprite2D" parent="."]
+position = Vector2(327, 321)
+texture = ExtResource("19_qn3o0")
+
+[node name="SunTeleportReciever" type="Sprite2D" parent="."]
+position = Vector2(226, 145)
+texture = ExtResource("19_o25qf")
