@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=10 format=3 uid="uid://eofp4cb85t6c"]
+[gd_resource type="SpriteFrames" load_steps=10 format=3 uid="uid://d3x4udtkox0qx"]
 
 [ext_resource type="Texture2D" uid="uid://cch3olkvdqgba" path="res://assets/objects/teleporter-moon.png" id="1_y01g2"]
 [ext_resource type="Texture2D" uid="uid://cx05xl37krlah" path="res://assets/objects/sun_teleporter.png" id="2_mserj"]
