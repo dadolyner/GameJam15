@@ -1058,7 +1058,7 @@ portal_model = 1
 controls = ExtResource("4_1s0o3")
 
 [node name="CoinPuzzle" parent="." instance=ExtResource("17_kvpq5")]
-position = Vector2(149, 58)
+position = Vector2(150, 52)
 
 [node name="Coins1" parent="CoinPuzzle" index="0"]
 position = Vector2(94, 35)

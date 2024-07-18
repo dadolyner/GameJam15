@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://dhesq78eago1g"]
+
+[ext_resource type="Script" path="res://src/scenes/Puzzles/Coins/CoinPuzzle.gd" id="1_5vymf"]
+[ext_resource type="PackedScene" uid="uid://dki0jpw2rjs7h" path="res://src/scenes/Puzzles/Coins/Coins.tscn" id="2_euy3l"]
+[ext_resource type="AudioStream" uid="uid://c12hqlqmim1ex" path="res://assets/Pixel Adventure/Sounds/coin.wav" id="3_p2get"]
+[ext_resource type="AudioStream" uid="uid://detnu1bohs5he" path="res://assets/Pixel Adventure/Sounds/explosion.wav" id="4_mafjp"]
+
+[node name="CoinPuzzle" type="Node2D" node_paths=PackedStringArray("coinCollection")]
+script = ExtResource("1_5vymf")
+coinCollection = [NodePath("Coins1"), NodePath("Coins2"), NodePath("Coins3"), NodePath("Coins4"), NodePath("Coins5"), NodePath("Coins6")]
+
+[node name="Coins1" parent="." instance=ExtResource("2_euy3l")]
+collision_layer = 3
+collision_mask = 2
+
+[node name="Coins2" parent="." instance=ExtResource("2_euy3l")]
+collision_layer = 3
+collision_mask = 2
+
+[node name="Coins3" parent="." instance=ExtResource("2_euy3l")]
+collision_layer = 3
+collision_mask = 2
+
+[node name="Coins4" parent="." instance=ExtResource("2_euy3l")]
+collision_layer = 3
+collision_mask = 2
+
+[node name="Coins5" parent="." instance=ExtResource("2_euy3l")]
+collision_layer = 3
+collision_mask = 2
+
+[node name="Coins6" parent="." instance=ExtResource("2_euy3l")]
+collision_layer = 3
+collision_mask = 2
+
+[node name="PickupSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_p2get")
+volume_db = -16.0
+bus = &"SFX"
+
+[node name="FailSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_mafjp")
+volume_db = -16.0
+bus = &"SFX"
