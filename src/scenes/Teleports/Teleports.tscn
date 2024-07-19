@@ -4,21 +4,20 @@
 [ext_resource type="SpriteFrames" uid="uid://eofp4cb85t6c" path="res://assets/SunAndMoodAnimation.tres" id="2_cc4yk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rng7s"]
-size = Vector2(31, 59)
+size = Vector2(30, 32)
 
 [node name="Teleports" type="Area2D"]
 light_mask = 3
 visibility_layer = 3
-position = Vector2(-1, 0)
 script = ExtResource("1_7emgo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_rng7s")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("2_cc4yk")
-animation = &"moon"
+animation = &"sun"
+frame_progress = 0.786128
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

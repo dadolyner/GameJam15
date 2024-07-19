@@ -5,12 +5,16 @@ extends Camera2D
 @onready var player_1: CharacterBody2D = $"../Player_1"
 @onready var player_2: CharacterBody2D = $"../Player_2"
 
+@onready var right_boundry = $RightBoundry
+@onready var left_boundry = $LeftBoundry
+
 @export var players: Array[CharacterBody2D]
 
 func _ready() -> void:
 	add_camera_target(player_1)
 	add_camera_target(player_2)
 	set_camera_limits()
+	set_camera_bounds()
 	
 func _process(_delta) -> void:
 	update_camera_position()
@@ -49,3 +53,10 @@ func update_camera_position() -> void:
 		clamp(midpoint.x, limit_left + float(tilemap_rect.position.x) / 2, limit_right - float(tilemap_rect.position.x) / 2),
 		tilemap_center
 	)
+
+func set_camera_bounds() -> void:
+	var viewport_size: Vector2 = get_viewport().size
+	var half_screen_width: float = round((viewport_size.x / 2) / zoom.x)
+	
+	left_boundry.position.x = position.x - half_screen_width
+	right_boundry.position.x = position.x + half_screen_width

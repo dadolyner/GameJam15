@@ -1,6 +1,27 @@
-[gd_scene load_steps=2 format=3 uid="uid://c0qalbgmrfq2r"]
+[gd_scene load_steps=4 format=3 uid="uid://c0qalbgmrfq2r"]
 
 [ext_resource type="Script" path="res://src/scenes/World/camera.gd" id="1_uuq8n"]
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_f3o6n"]
+normal = Vector2(-1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_np0v4"]
+normal = Vector2(1, 0)
+
 [node name="Camera" type="Camera2D"]
+zoom = Vector2(1.5, 1.5)
 script = ExtResource("1_uuq8n")
+
+[node name="RightBoundry" type="StaticBody2D" parent="."]
+position = Vector2(420, 1)
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightBoundry"]
+shape = SubResource("WorldBoundaryShape2D_f3o6n")
+
+[node name="LeftBoundry" type="StaticBody2D" parent="."]
+position = Vector2(-420, 0)
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftBoundry"]
+shape = SubResource("WorldBoundaryShape2D_np0v4")
