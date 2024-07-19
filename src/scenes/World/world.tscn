@@ -1,4 +1,4 @@
-[gd_scene load_steps=86 format=3 uid="uid://cagi5183kdthy"]
+[gd_scene load_steps=87 format=3 uid="uid://cagi5183kdthy"]
 
 [ext_resource type="Texture2D" uid="uid://c1uc31kg0vxa5" path="res://assets/Pixel Adventure/Terrain/Terrain (16x16).png" id="1_osrnh"]
 [ext_resource type="PackedScene" uid="uid://dn5bj8h2j517g" path="res://src/scenes/Player/player.tscn" id="2_hsd2o"]

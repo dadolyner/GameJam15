@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=8 format=3 uid="uid://dvepugwq1crjv"]
+[gd_resource type="SpriteFrames" load_steps=8 format=3 uid="uid://dl1tnvntvw8p7"]
 
 [ext_resource type="Texture2D" uid="uid://c1ss7gsh777mh" path="res://assets/Pixel Adventure/Main Characters/Appearing (96x96).png" id="1_osixk"]
 [ext_resource type="Texture2D" uid="uid://4w8jvdaey7ld" path="res://assets/objects/coin.png" id="2_biy37"]
