@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dkyw7g6lfuhi0"]
+[gd_scene load_steps=5 format=3 uid="uid://dkyw7g6lfuhi0"]
 
 [ext_resource type="Script" path="res://src/scenes/Puzzles/Timetravel/Timetravel_puzzle.gd" id="1_30u5y"]
 [ext_resource type="PackedScene" uid="uid://bqbvjbhatg4xi" path="res://src/scenes/Puzzles/Timetravel/Timetravel_pineapple.tscn" id="2_8bw0p"]
 [ext_resource type="AudioStream" uid="uid://o0mp0wvfprgg" path="res://assets/Pixel Adventure/Sounds/eating.mp3" id="3_xc48c"]
+[ext_resource type="FontFile" uid="uid://ckc2vx5rrmxen" path="res://assets/CustomFont.ttf" id="4_g82f6"]
 
 [node name="TimetravelPuzzle" type="Node2D" node_paths=PackedStringArray("pineapple_collection")]
 script = ExtResource("1_30u5y")
@@ -33,3 +34,10 @@ one_shot = true
 
 [node name="Pickup_sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_xc48c")
+
+[node name="time_left_label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("4_g82f6")
+theme_override_font_sizes/font_size = 18

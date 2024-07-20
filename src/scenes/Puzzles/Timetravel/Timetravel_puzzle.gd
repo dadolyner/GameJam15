@@ -3,7 +3,8 @@ extends Node2D
 @export var pineapple_collection: Array[Area2D]
 @onready var countdown_timer = $countdown_timer
 @onready var pickup_sound = $Pickup_sound
-
+@onready var time_left_label = $time_left_label
+@export var player1: CharacterBody2D
 var has_already_timetraveled: bool = false
 var has_timetravel_puzzle_started: bool = false
 var time_needed_to_finish: float
@@ -29,11 +30,18 @@ func _on_dialogic_signal(argument:String):
 		time_needed_to_finish = countup_timer
 		countdown_timer.start(time_needed_to_finish)
 
+func round_place(num,places):
+	return (round(num*pow(10,places))/pow(10,places))
 		
 func _process(delta):
 	if is_timer_active:
 		countup_timer += delta
-
+	if not countdown_timer.is_stopped():
+		time_left_label.position.x = player1.position.x
+		time_left_label.position.y = player1.position.y - 32
+		time_left_label.text = str(round_place(countdown_timer.time_left,2))
+	else:
+		time_left_label.text = ""
 
 func start_timetravel(player1, player2, pineapple):
 	if not has_timetravel_puzzle_started:

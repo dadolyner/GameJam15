@@ -1102,7 +1102,8 @@ position = Vector2(219, -18)
 [node name="Coins6" parent="CoinPuzzle" index="5"]
 position = Vector2(158, 221)
 
-[node name="TimetravelPuzzle" parent="." instance=ExtResource("19_q40ro")]
+[node name="TimetravelPuzzle" parent="." node_paths=PackedStringArray("player1") instance=ExtResource("19_q40ro")]
+player1 = NodePath("../Player_1")
 
 [node name="TTPineapple" parent="TimetravelPuzzle" index="0" node_paths=PackedStringArray("player1", "player2")]
 position = Vector2(537, 107)
@@ -1133,6 +1134,10 @@ position = Vector2(400, 107)
 collision_layer = 3
 player1 = NodePath("../../Player_1")
 player2 = NodePath("../../Player_2")
+
+[node name="time_left_label" parent="TimetravelPuzzle" index="7"]
+offset_right = 92.0
+offset_bottom = 41.0
 
 [editable path="CoinPuzzle"]
 [editable path="TimetravelPuzzle"]
