@@ -29,6 +29,7 @@ func round_place(num,places):
 func _process(delta):
 	if is_timer_active:
 		countup_timer += delta
+		print(countup_timer)
 	if not countdown_timer.is_stopped():
 		time_left_label.position.x = playerOverheadPlayer.position.x
 		time_left_label.position.y = playerOverheadPlayer.position.y - 32
@@ -38,6 +39,7 @@ func _process(delta):
 
 func start_timetravel(player1, player2, pineapple):
 	if not has_timetravel_puzzle_started:
+		is_timer_active = true
 		has_timetravel_puzzle_started = true
 		player1_start_positions = player1.position
 		player2_start_positions = player2.position
