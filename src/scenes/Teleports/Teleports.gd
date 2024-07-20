@@ -19,6 +19,7 @@ func _ready() -> void:
 
 func _process(_delta) -> void:
 	if moon_over_teleport and Input.is_action_just_pressed(controls.interact) and portal_model == 0:
+		print(target_portal.position)
 		player_1.position = target_portal.position	
 	if sun_over_teleport and Input.is_action_just_pressed(controls.interact) and portal_model == 1:
 		player_2.position = target_portal.position

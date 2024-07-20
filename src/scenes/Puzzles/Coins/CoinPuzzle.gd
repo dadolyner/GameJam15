@@ -24,7 +24,6 @@ func pickup_coin(coin):
 		pickup_sound.play()
 		coinCollection[0].set_collision_mask_value(2, 0)
 		coinCollection[0].get_node("Sprite2D").play("explosion")
-
 	else:
 		var coins = coinCollection.slice(1, coinCollection.size())
 		var found = false
@@ -39,7 +38,6 @@ func pickup_coin(coin):
 		if not found:
 			reset_Coins()
 
-			
 func reset_Coins():
 	for j in range(0,len(coinCollection)):
 		coinCollection[j].visible = true

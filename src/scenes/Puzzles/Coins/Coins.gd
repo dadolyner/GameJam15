@@ -9,7 +9,7 @@ func _ready():
 	sprite_2d.play("idle")
 
 
-func _on_body_entered(body):
+func _on_body_entered(_body):
 	coin_puzzle.pickup_coin(coins)
 
 
