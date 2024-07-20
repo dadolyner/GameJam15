@@ -5,6 +5,7 @@ extends Node2D
 @onready var pickup_sound = $Pickup_sound
 @onready var time_left_label = $time_left_label
 @export var playerOverheadPlayer: CharacterBody2D
+
 var has_already_timetraveled: bool = false
 var has_timetravel_puzzle_started: bool = false
 var time_needed_to_finish: float
