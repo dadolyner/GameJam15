@@ -1,23 +1,24 @@
 [gd_scene load_steps=4 format=3 uid="uid://dki0jpw2rjs7h"]
 
 [ext_resource type="Script" path="res://src/scenes/Puzzles/Coins/Coins.gd" id="1_2li62"]
-[ext_resource type="SpriteFrames" uid="uid://dvepugwq1crjv" path="res://assets/CoinsAnimations.tres" id="2_skry2"]
+[ext_resource type="SpriteFrames" uid="uid://dl1tnvntvw8p7" path="res://src/scenes/Puzzles/Coins/animation.tres" id="2_two58"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0qj73"]
-size = Vector2(28, 27)
+[sub_resource type="CircleShape2D" id="CircleShape2D_qq835"]
+radius = 9.0
 
-[node name="Coins" type="Area2D"]
+[node name="Coin" type="Area2D"]
+collision_layer = 4
+collision_mask = 2
 script = ExtResource("1_2li62")
 
-[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = ExtResource("2_skry2")
-animation = &"explosion"
-frame = 3
-frame_progress = 0.770043
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1.5, 1.5)
+sprite_frames = ExtResource("2_two58")
+animation = &"idle"
+autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, -0.5)
-shape = SubResource("RectangleShape2D_0qj73")
+shape = SubResource("CircleShape2D_qq835")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
-[connection signal="animation_finished" from="Sprite2D" to="." method="_on_sprite_2d_animation_finished"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_sprite_2d_animation_finished"]

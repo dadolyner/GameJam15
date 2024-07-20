@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhx4tsm5a3r6a"
-path="res://.godot/imported/blue_portal.png-bb54326e80bd006e1afd69526d146a79.ctex"
+uid="uid://bfivw8oq577yf"
+path="res://.godot/imported/red_portal.png-db49c2c5b8d5bbd938e407bb2227d328.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/scenes/Teleports/blue_portal.png"
-dest_files=["res://.godot/imported/blue_portal.png-bb54326e80bd006e1afd69526d146a79.ctex"]
+source_file="res://src/scenes/Portals/red_portal.png"
+dest_files=["res://.godot/imported/red_portal.png-db49c2c5b8d5bbd938e407bb2227d328.ctex"]
 
 [params]
 

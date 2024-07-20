@@ -1,18 +1,11 @@
 extends Area2D
 
-@onready var coin_puzzle = $".."
-@onready var coins = $"."
-@onready var sprite_2d = $Sprite2D
-const COINS_ANIMATIONS = preload("res://assets/CoinsAnimations.tres")
+@onready var coin_puzzle: Node2D = $".."
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
-func _ready():
-	sprite_2d.play("idle")
+func _on_body_entered(_body) -> void:
+	coin_puzzle.pickup_coin(self)
 
-
-func _on_body_entered(body):
-	coin_puzzle.pickup_coin(coins)
-
-
-func _on_sprite_2d_animation_finished():
-	if sprite_2d.animation == "explosion":
-		coins.visible = false
+func _on_sprite_2d_animation_finished() -> void:
+	if animated_sprite_2d.animation == "explosion":
+		self.visible = false

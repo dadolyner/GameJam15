@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://lcgh1nqk1rie"]
+
+[ext_resource type="SpriteFrames" uid="uid://eofp4cb85t6c" path="res://src/scenes/Portals/animations.tres" id="1_dscsq"]
+[ext_resource type="Script" path="res://src/scenes/Portals/portal.gd" id="1_g7kft"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hnhaj"]
+size = Vector2(30, 32)
+
+[node name="Portal" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_g7kft")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_hnhaj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("1_dscsq")
+animation = &"sun"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
