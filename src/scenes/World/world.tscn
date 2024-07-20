@@ -1112,19 +1112,19 @@ player1 = NodePath("../../Player_1")
 player2 = NodePath("../../Player_2")
 
 [node name="TTPineapple2" parent="TimetravelPuzzle" index="1" node_paths=PackedStringArray("player1", "player2")]
-position = Vector2(504, 104)
+position = Vector2(407, 296)
 collision_layer = 3
 player1 = NodePath("../../Player_1")
 player2 = NodePath("../../Player_2")
 
 [node name="TTPineapple3" parent="TimetravelPuzzle" index="2" node_paths=PackedStringArray("player1", "player2")]
-position = Vector2(470, 106)
+position = Vector2(156, 302)
 collision_layer = 3
 player1 = NodePath("../../Player_1")
 player2 = NodePath("../../Player_2")
 
 [node name="TTPineapple4" parent="TimetravelPuzzle" index="3" node_paths=PackedStringArray("player1", "player2")]
-position = Vector2(435, 106)
+position = Vector2(566, 210)
 collision_layer = 3
 player1 = NodePath("../../Player_1")
 player2 = NodePath("../../Player_2")
