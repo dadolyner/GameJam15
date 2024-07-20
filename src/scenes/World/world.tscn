@@ -1,4 +1,4 @@
-[gd_scene load_steps=90 format=3 uid="uid://cagi5183kdthy"]
+[gd_scene load_steps=88 format=3 uid="uid://cagi5183kdthy"]
 
 [ext_resource type="Texture2D" uid="uid://c1uc31kg0vxa5" path="res://assets/Pixel Adventure/Terrain/Terrain (16x16).png" id="1_osrnh"]
 [ext_resource type="PackedScene" uid="uid://dn5bj8h2j517g" path="res://src/scenes/Player/player.tscn" id="2_hsd2o"]
@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://lcgh1nqk1rie" path="res://src/scenes/Portals/portal.tscn" id="19_151rv"]
 [ext_resource type="PackedScene" uid="uid://ckca0a4hkskt7" path="res://src/scenes/Button/button.tscn" id="20_s2l8o"]
 [ext_resource type="Script" path="res://src/scenes/Button/button_upscale.gd" id="21_3uxlr"]
+[ext_resource type="PackedScene" uid="uid://dkyw7g6lfuhi0" path="res://src/scenes/Puzzles/Timetravel/Timetravel_puzzle.tscn" id="19_q40ro"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xx6ad"]
 resource_name = "Terrain"
@@ -1027,7 +1028,7 @@ sprite_frames = SubResource("SpriteFrames_oi8fk")
 animation = &"idle"
 
 [node name="Player_2" parent="." instance=ExtResource("2_hsd2o")]
-position = Vector2(27, 321)
+position = Vector2(364, 322)
 controls = ExtResource("4_1s0o3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player_2"]
@@ -1120,7 +1121,45 @@ pressed_sprite = 1
 [connection signal="body_entered" from="Buttons/UpscaleButton/Area2D" to="Buttons/UpscaleButton" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Buttons/UpscaleButton/Area2D" to="Buttons/UpscaleButton" method="_on_area_2d_body_exited"]
 
+[node name="TimetravelPuzzle" parent="." node_paths=PackedStringArray("playerOverheadPlayer") instance=ExtResource("19_q40ro")]
+playerOverheadPlayer = NodePath("../Player_1")
+
+[node name="TTPineapple" parent="TimetravelPuzzle" index="0" node_paths=PackedStringArray("player1", "player2")]
+position = Vector2(537, 107)
+collision_layer = 3
+player1 = NodePath("../../Player_1")
+player2 = NodePath("../../Player_2")
+
+[node name="TTPineapple2" parent="TimetravelPuzzle" index="1" node_paths=PackedStringArray("player1", "player2")]
+position = Vector2(407, 296)
+collision_layer = 3
+player1 = NodePath("../../Player_1")
+player2 = NodePath("../../Player_2")
+
+[node name="TTPineapple3" parent="TimetravelPuzzle" index="2" node_paths=PackedStringArray("player1", "player2")]
+position = Vector2(156, 302)
+collision_layer = 3
+player1 = NodePath("../../Player_1")
+player2 = NodePath("../../Player_2")
+
+[node name="TTPineapple4" parent="TimetravelPuzzle" index="3" node_paths=PackedStringArray("player1", "player2")]
+position = Vector2(566, 210)
+collision_layer = 3
+player1 = NodePath("../../Player_1")
+player2 = NodePath("../../Player_2")
+
+[node name="TTPineapple5" parent="TimetravelPuzzle" index="4" node_paths=PackedStringArray("player1", "player2")]
+position = Vector2(400, 107)
+collision_layer = 3
+player1 = NodePath("../../Player_1")
+player2 = NodePath("../../Player_2")
+
+[node name="time_left_label" parent="TimetravelPuzzle" index="7"]
+offset_right = 92.0
+offset_bottom = 41.0
+
 [editable path="CoinPuzzle"]
 [editable path="Buttons/BlueButton"]
 [editable path="Buttons/RedButton"]
 [editable path="Buttons/UpscaleButton"]
+[editable path="TimetravelPuzzle"]

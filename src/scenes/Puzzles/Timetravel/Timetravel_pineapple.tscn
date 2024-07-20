@@ -1,0 +1,147 @@
+[gd_scene load_steps=22 format=3 uid="uid://bqbvjbhatg4xi"]
+
+[ext_resource type="Script" path="res://src/scenes/Puzzles/Timetravel/Timetravel_pineapple.gd" id="1_cr0vx"]
+[ext_resource type="Texture2D" uid="uid://cee8op8dk2ngu" path="res://assets/Pixel Adventure/Items/Fruits/Pineapple.png" id="1_hujmx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e1o11"]
+atlas = ExtResource("1_hujmx")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6graj"]
+atlas = ExtResource("1_hujmx")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t7rjd"]
+atlas = ExtResource("1_hujmx")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ah4o"]
+atlas = ExtResource("1_hujmx")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ivf4"]
+atlas = ExtResource("1_hujmx")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qva22"]
+atlas = ExtResource("1_hujmx")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6c5et"]
+atlas = ExtResource("1_hujmx")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wscqy"]
+atlas = ExtResource("1_hujmx")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cmdrw"]
+atlas = ExtResource("1_hujmx")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5mk34"]
+atlas = ExtResource("1_hujmx")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vkieb"]
+atlas = ExtResource("1_hujmx")
+region = Rect2(320, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i28go"]
+atlas = ExtResource("1_hujmx")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kxfkb"]
+atlas = ExtResource("1_hujmx")
+region = Rect2(384, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sa2rw"]
+atlas = ExtResource("1_hujmx")
+region = Rect2(416, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ongdd"]
+atlas = ExtResource("1_hujmx")
+region = Rect2(448, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cxhyn"]
+atlas = ExtResource("1_hujmx")
+region = Rect2(480, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g7op2"]
+atlas = ExtResource("1_hujmx")
+region = Rect2(512, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8wwxb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e1o11")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6graj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t7rjd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ah4o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ivf4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qva22")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6c5et")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wscqy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cmdrw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5mk34")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vkieb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i28go")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kxfkb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sa2rw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ongdd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cxhyn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g7op2")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 22.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iuytt"]
+
+[node name="TTPineapple" type="Area2D"]
+light_mask = 2
+visibility_layer = 2
+script = ExtResource("1_cr0vx")
+
+[node name="pineapple_sprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_8wwxb")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_iuytt")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
