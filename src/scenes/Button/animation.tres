@@ -1,0 +1,54 @@
+[gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://j6xdgtlrwbvk"]
+
+[ext_resource type="Texture2D" uid="uid://c1lehaht4jtwe" path="res://assets/Pixel Adventure/Other/ButtonSprites.png" id="1_kmk5n"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3tktk"]
+atlas = ExtResource("1_kmk5n")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a36u1"]
+atlas = ExtResource("1_kmk5n")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tg45y"]
+atlas = ExtResource("1_kmk5n")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k36dp"]
+atlas = ExtResource("1_kmk5n")
+region = Rect2(64, 0, 32, 32)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3tktk")
+}],
+"loop": true,
+"name": &"blue_idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a36u1")
+}],
+"loop": true,
+"name": &"blue_pressed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tg45y")
+}],
+"loop": true,
+"name": &"red_idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k36dp")
+}],
+"loop": true,
+"name": &"red_pressed",
+"speed": 5.0
+}]

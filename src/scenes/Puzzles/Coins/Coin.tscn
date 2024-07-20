@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dki0jpw2rjs7h"]
 
-[ext_resource type="Script" path="res://src/scenes/Puzzles/Coins/Coins.gd" id="1_2li62"]
+[ext_resource type="Script" path="res://src/scenes/Puzzles/Coins/Coin.gd" id="1_2li62"]
 [ext_resource type="SpriteFrames" uid="uid://dl1tnvntvw8p7" path="res://src/scenes/Puzzles/Coins/animation.tres" id="2_two58"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qq835"]
