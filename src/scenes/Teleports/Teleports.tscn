@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://vifhbo0hqobj"]
 
 [ext_resource type="Script" path="res://src/scenes/Teleports/Teleports.gd" id="1_7emgo"]
-[ext_resource type="SpriteFrames" uid="uid://d3x4udtkox0qx" path="res://assets/SunAndMoodAnimation.tres" id="2_cc4yk"]
+[ext_resource type="SpriteFrames" uid="uid://eofp4cb85t6c" path="res://assets/SunAndMoodAnimation.tres" id="2_cc4yk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rng7s"]
 size = Vector2(30, 32)
