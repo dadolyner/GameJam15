@@ -4,7 +4,7 @@ extends Node2D
 @onready var countdown_timer = $countdown_timer
 @onready var pickup_sound = $Pickup_sound
 @onready var time_left_label = $time_left_label
-@export var player1: CharacterBody2D
+@export var playerOverheadPlayer: CharacterBody2D
 var has_already_timetraveled: bool = false
 var has_timetravel_puzzle_started: bool = false
 var time_needed_to_finish: float
@@ -17,18 +17,10 @@ var is_timer_active : bool = false
 
 var was_faster: bool = false
 
-var end_of_timetravel_chat_shown: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	Dialogic.signal_event.connect(_on_dialogic_signal)
-
-func _on_dialogic_signal(argument:String):
-	if argument == "end_of_start_of_timetravel":
-		is_timer_active = true
-	if argument == "end_of_timetravel":
-		time_needed_to_finish = countup_timer
-		countdown_timer.start(time_needed_to_finish)
+	pass
 
 func round_place(num,places):
 	return (round(num*pow(10,places))/pow(10,places))
@@ -37,15 +29,14 @@ func _process(delta):
 	if is_timer_active:
 		countup_timer += delta
 	if not countdown_timer.is_stopped():
-		time_left_label.position.x = player1.position.x
-		time_left_label.position.y = player1.position.y - 32
+		time_left_label.position.x = playerOverheadPlayer.position.x
+		time_left_label.position.y = playerOverheadPlayer.position.y - 32
 		time_left_label.text = str(round_place(countdown_timer.time_left,2))
 	else:
 		time_left_label.text = ""
 
 func start_timetravel(player1, player2, pineapple):
 	if not has_timetravel_puzzle_started:
-		Dialogic.start("timetravel_start_chat")
 		has_timetravel_puzzle_started = true
 		player1_start_positions = player1.position
 		player2_start_positions = player2.position
@@ -62,6 +53,8 @@ func start_timetravel(player1, player2, pineapple):
 			is_timer_active = false
 			player1.position = player1_start_positions
 			player2.position = player2_start_positions
+			time_needed_to_finish = countup_timer
+			countdown_timer.start(time_needed_to_finish)
 			has_already_timetraveled = true
 			reset_pineapples_for_timetravel()
 	elif has_timetravel_puzzle_started and has_already_timetraveled:
@@ -79,9 +72,6 @@ func start_timetravel(player1, player2, pineapple):
 				print("LOOOOSEEEEEEEEEER")
 			
 func reset_pineapples_for_timetravel():
-	if not end_of_timetravel_chat_shown:
-		Dialogic.start("timetravel_reveal")
-		end_of_timetravel_chat_shown = true
 	amount_of_objects = 0
 	for i in range(0,len(pineapple_collection)):
 		pineapple_collection[i].visible = true

@@ -7,7 +7,6 @@ extends Node2D
 
 var isInOrder: bool = false
 var tableIterator: int = 0
-var instructions_were_shown: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -40,9 +39,6 @@ func pickup_coin(coin):
 			reset_Coins()
 
 func reset_Coins():
-	if not instructions_were_shown:
-		Dialogic.start("incorrect_coin_instruction")
-		instructions_were_shown = true
 	for j in range(0,len(coinCollection)):
 		coinCollection[j].visible = true
 		coinCollection[j].set_collision_mask_value(2,1)

@@ -1102,8 +1102,8 @@ position = Vector2(219, -18)
 [node name="Coins6" parent="CoinPuzzle" index="5"]
 position = Vector2(158, 221)
 
-[node name="TimetravelPuzzle" parent="." node_paths=PackedStringArray("player1") instance=ExtResource("19_q40ro")]
-player1 = NodePath("../Player_1")
+[node name="TimetravelPuzzle" parent="." node_paths=PackedStringArray("playerOverheadPlayer") instance=ExtResource("19_q40ro")]
+playerOverheadPlayer = NodePath("../Player_1")
 
 [node name="TTPineapple" parent="TimetravelPuzzle" index="0" node_paths=PackedStringArray("player1", "player2")]
 position = Vector2(537, 107)

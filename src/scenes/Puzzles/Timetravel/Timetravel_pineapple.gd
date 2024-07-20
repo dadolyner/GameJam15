@@ -11,6 +11,6 @@ func _ready():
 	pineapple_sprite.play("idle")
 
 
-func _on_body_entered(body):
+func _on_body_entered(_body):
 	timetravel_puzzle.start_timetravel(player1, player2, tt_pineapple)
 
