@@ -1087,8 +1087,10 @@ portal_target = NodePath("../Portal_2")
 position = Vector2(521, 273)
 portal_target = NodePath("../Portal_1")
 
-[node name="CoinPuzzle" parent="." node_paths=PackedStringArray("coin_collection") instance=ExtResource("17_kvpq5")]
+[node name="CoinPuzzle" parent="." node_paths=PackedStringArray("coin_collection", "player1_speech_bubble", "player2_speech_bubble") instance=ExtResource("17_kvpq5")]
 coin_collection = [NodePath("Coin1"), NodePath("Coin2"), NodePath("Coin3"), NodePath("Coin4"), NodePath("Coin5"), NodePath("Coin6")]
+player1_speech_bubble = NodePath("../Player_1")
+player2_speech_bubble = NodePath("../Player_2")
 
 [node name="Coin1" parent="CoinPuzzle" index="0"]
 position = Vector2(35, 33)
