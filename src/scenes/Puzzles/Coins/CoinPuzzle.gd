@@ -6,6 +6,8 @@ extends Node2D
 @export var player1_speech_bubble: CharacterBody2D
 @export var player2_speech_bubble: CharacterBody2D
 
+
+var current_speaker: CharacterBody2D
 var fail_attempts: int = 3
 var is_in_order: bool = false
 var coin_index: int = 0
@@ -17,8 +19,11 @@ const lines_for_fail: Array[String] = [
 
 #To-Do: Display over the character that triggered it
 func _process(delta):
-	DialogManager.update_position(player1_speech_bubble.position)
-
+	if current_speaker == player1_speech_bubble:
+		DialogManager.update_position(player1_speech_bubble.position)
+	elif current_speaker == player2_speech_bubble:
+		DialogManager.update_position(player2_speech_bubble.position)
+		
 func pickup_coin(coin: Area2D, body: Node) -> void:
 	if not is_in_order and coin == coin_collection[0]:
 		is_in_order = true
@@ -33,6 +38,7 @@ func pickup_coin(coin: Area2D, body: Node) -> void:
 			coin.set_collision_mask_value(2, 0)
 			coin.get_node("AnimatedSprite2D").play("explosion")
 		else:
+			current_speaker = body
 			reset_coins(body)
 
 func reset_coins(body: Node) -> void:
