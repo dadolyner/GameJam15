@@ -33,9 +33,13 @@ func set_camera_limits() -> void:
 
 	var top_left: Vector2 = tilemap.map_to_local(map_bounds.position)
 	var bottom_right: Vector2 = tilemap.map_to_local(map_bounds.position + map_bounds.size)
+	print("TOP: ", top_left.y)
+	print("BOTTOM: ", bottom_right.y)
 	
 	limit_right = int(bottom_right.x + (tile_size.x * 4.0))
 	limit_left = int(top_left.x - (tile_size.x * 4.0))
+	limit_top = 0
+	limit_bottom = int(bottom_right.y - top_left.y)
 
 func update_camera_position() -> void:
 	if players.size() < 2:

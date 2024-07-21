@@ -7,7 +7,7 @@
 
 [node name="TimetravelPuzzle" type="Node2D" node_paths=PackedStringArray("pineapple_collection")]
 script = ExtResource("1_30u5y")
-pineapple_collection = [NodePath("Pineapple1"), NodePath("Pineapple2"), NodePath("Pineapple3"), NodePath("Pineapple4"), NodePath("Pineapple5")]
+pineapple_collection = [NodePath("Pineapple1"), NodePath("Pineapple2"), NodePath("Pineapple3"), NodePath("Pineapple4"), NodePath("Pineapple5"), NodePath("Pineapple6")]
 
 [node name="Pineapple1" parent="." instance=ExtResource("2_8bw0p")]
 collision_layer = 2
@@ -26,6 +26,10 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="Pineapple5" parent="." instance=ExtResource("2_8bw0p")]
+collision_layer = 2
+collision_mask = 2
+
+[node name="Pineapple6" parent="." instance=ExtResource("2_8bw0p")]
 collision_layer = 2
 collision_mask = 2
 
