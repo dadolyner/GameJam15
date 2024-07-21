@@ -1,0 +1,43 @@
+[gd_scene load_steps=8 format=3 uid="uid://cmxsxqwhdao4i"]
+
+[ext_resource type="Script" path="res://src/scenes/Puzzles/Portals/PortalPuzzle.gd" id="1_3surq"]
+[ext_resource type="PackedScene" uid="uid://vifhbo0hqobj" path="res://src/scenes/Portals/portals.tscn" id="1_qdg4k"]
+[ext_resource type="PackedScene" uid="uid://lcgh1nqk1rie" path="res://src/scenes/Portals/portal.tscn" id="3_tv62n"]
+[ext_resource type="Script" path="res://src/scenes/Portals/toggle_portal.gd" id="4_2wtwi"]
+[ext_resource type="PackedScene" uid="uid://dnb5vcvflr20h" path="res://src/scenes/Lever/lever.tscn" id="5_8x7um"]
+[ext_resource type="PackedScene" uid="uid://7qmk2m2q43rk" path="res://src/scenes/Puzzles/Portals/Cherry.tscn" id="6_jfgqj"]
+[ext_resource type="AudioStream" uid="uid://o0mp0wvfprgg" path="res://assets/Pixel Adventure/Sounds/eating.mp3" id="6_lnip7"]
+
+[node name="PortalPuzzle" type="Node2D"]
+script = ExtResource("1_3surq")
+
+[node name="TogglePortal" parent="." instance=ExtResource("1_qdg4k")]
+portal_active = false
+
+[node name="Portal_1" parent="TogglePortal" node_paths=PackedStringArray("portal_target") instance=ExtResource("3_tv62n")]
+script = ExtResource("4_2wtwi")
+portal_target = NodePath("../Portal_2")
+
+[node name="Portal_2" parent="TogglePortal" node_paths=PackedStringArray("portal_target") instance=ExtResource("3_tv62n")]
+script = ExtResource("4_2wtwi")
+portal_target = NodePath("../Portal_1")
+
+[node name="Lever" parent="TogglePortal" instance=ExtResource("5_8x7um")]
+
+[node name="Collectables" type="Node2D" parent="."]
+
+[node name="Cherry1" parent="Collectables" instance=ExtResource("6_jfgqj")]
+
+[node name="Cherry2" parent="Collectables" instance=ExtResource("6_jfgqj")]
+
+[node name="Cherry3" parent="Collectables" instance=ExtResource("6_jfgqj")]
+
+[node name="Cherry4" parent="Collectables" instance=ExtResource("6_jfgqj")]
+
+[node name="Cherry5" parent="Collectables" instance=ExtResource("6_jfgqj")]
+
+[node name="Cherry6" parent="Collectables" instance=ExtResource("6_jfgqj")]
+
+[node name="Pickup_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_lnip7")
+bus = &"SFX"

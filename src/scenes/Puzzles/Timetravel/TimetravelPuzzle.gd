@@ -1,10 +1,10 @@
 extends Node2D
 
 @export var pineapple_collection: Array[Area2D]
-@onready var countdown_timer = $countdown_timer
-@onready var pickup_sound = $Pickup_sound
-@onready var player_1_label = $Player_1_Label
-@onready var player_2_label = $Player_2_Label
+@onready var countdown_timer: Timer = $countdown_timer
+@onready var pickup_sound: AudioStreamPlayer = $Pickup_sound
+@onready var player_1_label: Label = $Player_1_Label
+@onready var player_2_label: Label = $Player_2_Label
 
 @export var players: Array[CharacterBody2D]
 

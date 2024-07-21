@@ -38,6 +38,7 @@ one_shot = true
 
 [node name="Pickup_sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_xc48c")
+bus = &"SFX"
 
 [node name="Player_1_Label" type="Label" parent="."]
 offset_right = 40.0

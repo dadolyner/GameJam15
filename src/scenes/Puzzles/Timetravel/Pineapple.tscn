@@ -137,7 +137,7 @@ light_mask = 2
 visibility_layer = 2
 script = ExtResource("1_cr0vx")
 
-[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_8wwxb")
 animation = &"idle"
 autoplay = "idle"

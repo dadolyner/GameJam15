@@ -1,7 +1,8 @@
-[gd_resource type="SpriteFrames" load_steps=9 format=3 uid="uid://eofp4cb85t6c"]
+[gd_resource type="SpriteFrames" load_steps=11 format=3 uid="uid://eofp4cb85t6c"]
 
 [ext_resource type="Texture2D" uid="uid://dhx4tsm5a3r6a" path="res://src/scenes/Portals/blue_portal.png" id="1_7y2t2"]
 [ext_resource type="Texture2D" uid="uid://bfivw8oq577yf" path="res://src/scenes/Portals/red_portal.png" id="2_0m1jb"]
+[ext_resource type="Texture2D" uid="uid://yqil0xsyt36c" path="res://src/scenes/Portals/off_portal.png" id="2_h4xnn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xevdn"]
 atlas = ExtResource("1_7y2t2")
@@ -14,6 +15,10 @@ region = Rect2(32, 0, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_khcl6"]
 atlas = ExtResource("1_7y2t2")
 region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n3uab"]
+atlas = ExtResource("2_h4xnn")
+region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_caupk"]
 atlas = ExtResource("2_0m1jb")
@@ -41,6 +46,14 @@ animations = [{
 }],
 "loop": true,
 "name": &"moon",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n3uab")
+}],
+"loop": true,
+"name": &"off",
 "speed": 8.0
 }, {
 "frames": [{

@@ -2,18 +2,21 @@ extends Area2D
 
 @onready var portals: Node2D = $".."
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var lever: Area2D = $"../Lever"
 
 @export var portal_target: Area2D
 
 var is_over_portal: bool = false
+var is_portal_active: bool
 
 func _ready() -> void:
-	match portals.portal_model:
-		0: animated_sprite_2d.play("moon")
-		1: animated_sprite_2d.play("sun")
+	get_portal_animation()
 
 func _process(_delta) -> void:
-	if Input.is_action_just_pressed(portals.player_controls.interact) and is_over_portal:
+	is_portal_active = lever.get_lever_state() == 1
+	get_portal_animation()
+	
+	if Input.is_action_just_pressed(portals.player_controls.interact) and is_over_portal and is_portal_active:
 		portals.player.position = portal_target.position
 
 func _on_body_entered(body: Node) -> void:
@@ -27,3 +30,11 @@ func _on_body_exited(body) -> void:
 		is_over_portal = false
 	else:
 		return
+
+func get_portal_animation() -> void:
+	if is_portal_active == false:
+		animated_sprite_2d.play("off")
+	else:
+		match portals.portal_model:
+			0: animated_sprite_2d.play("moon")
+			1: animated_sprite_2d.play("sun")
