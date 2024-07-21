@@ -1,6 +1,6 @@
 [gd_scene load_steps=22 format=3 uid="uid://bqbvjbhatg4xi"]
 
-[ext_resource type="Script" path="res://src/scenes/Puzzles/Timetravel/Timetravel_pineapple.gd" id="1_cr0vx"]
+[ext_resource type="Script" path="res://src/scenes/Puzzles/Timetravel/Pineapple.gd" id="1_cr0vx"]
 [ext_resource type="Texture2D" uid="uid://cee8op8dk2ngu" path="res://assets/Pixel Adventure/Items/Fruits/Pineapple.png" id="1_hujmx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e1o11"]
@@ -132,12 +132,12 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iuytt"]
 
-[node name="TTPineapple" type="Area2D"]
+[node name="Pineapple" type="Area2D"]
 light_mask = 2
 visibility_layer = 2
 script = ExtResource("1_cr0vx")
 
-[node name="pineapple_sprite" type="AnimatedSprite2D" parent="."]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_8wwxb")
 animation = &"idle"
 
