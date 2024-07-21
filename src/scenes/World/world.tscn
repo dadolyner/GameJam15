@@ -1059,29 +1059,6 @@ curve = SubResource("Curve2D_7y882")
 script = ExtResource("24_85wu4")
 speed = 0.5
 
-[node name="CoinPuzzle" parent="." node_paths=PackedStringArray("coin_collection", "player1_speech_bubble", "player2_speech_bubble") instance=ExtResource("17_kvpq5")]
-coin_collection = [NodePath("Coin1"), NodePath("Coin2"), NodePath("Coin3"), NodePath("Coin4"), NodePath("Coin5"), NodePath("Coin6")]
-player1_speech_bubble = NodePath("../Player_1")
-player2_speech_bubble = NodePath("../Player_2")
-
-[node name="Coin1" parent="CoinPuzzle" index="0"]
-position = Vector2(87, 85)
-
-[node name="Coin2" parent="CoinPuzzle" index="1"]
-position = Vector2(359, 223)
-
-[node name="Coin3" parent="CoinPuzzle" index="2"]
-position = Vector2(337, 83)
-
-[node name="Coin4" parent="CoinPuzzle" index="3"]
-position = Vector2(546, 233)
-
-[node name="Coin5" parent="CoinPuzzle" index="4"]
-position = Vector2(152, 231)
-
-[node name="Coin6" parent="CoinPuzzle" index="5"]
-position = Vector2(517, 42)
-
 [node name="Portals" type="Node2D" parent="."]
 
 [node name="MoonPortals" parent="Portals" node_paths=PackedStringArray("player") instance=ExtResource("18_44c0g")]
@@ -1106,65 +1083,49 @@ position = Vector2(597, 449)
 portal_target = NodePath("../Portal_2")
 
 [node name="Portal_2" parent="Portals/SunPortals" node_paths=PackedStringArray("portal_target") instance=ExtResource("19_151rv")]
-position = Vector2(746, 143)
+position = Vector2(521, 289)
 portal_target = NodePath("../Portal_1")
 
-[node name="CoinPuzzle" parent="." node_paths=PackedStringArray("coin_collection") instance=ExtResource("17_kvpq5")]
+[node name="CoinPuzzle" parent="." node_paths=PackedStringArray("coin_collection", "player1_speech_bubble", "player2_speech_bubble") instance=ExtResource("17_kvpq5")]
 coin_collection = [NodePath("Coin1"), NodePath("Coin2"), NodePath("Coin3"), NodePath("Coin4"), NodePath("Coin5"), NodePath("Coin6")]
+player1_speech_bubble = NodePath("../Player_1")
+player2_speech_bubble = NodePath("../Player_2")
 
-[node name="BlueButton" parent="Buttons" instance=ExtResource("20_s2l8o")]
-position = Vector2(-262, 180)
+[node name="Coin1" parent="CoinPuzzle" index="0"]
+position = Vector2(35, 33)
 
 [node name="Coin2" parent="CoinPuzzle" index="1"]
 position = Vector2(275, 33)
 
-[node name="RedButton" parent="Buttons" instance=ExtResource("20_s2l8o")]
-position = Vector2(-260, 218)
+[node name="Coin3" parent="CoinPuzzle" index="2"]
+position = Vector2(227, 165)
 
 [node name="Coin4" parent="CoinPuzzle" index="3"]
 position = Vector2(297, 277)
 
-[node name="UpscaleButton" parent="Buttons" instance=ExtResource("20_s2l8o")]
-position = Vector2(252, 158)
-script = ExtResource("21_3uxlr")
+[node name="Coin5" parent="CoinPuzzle" index="4"]
+position = Vector2(519, 388)
 
 [node name="Coin6" parent="CoinPuzzle" index="5"]
 position = Vector2(49, 286)
 
-[node name="TimetravelPuzzle" parent="." node_paths=PackedStringArray("pineapple_collection", "player1_speech_bubble", "player2_speech_bubble") instance=ExtResource("19_q40ro")]
-pineapple_collection = []
-player1_speech_bubble = NodePath("../Player_1")
-player2_speech_bubble = NodePath("../Player_2")
+[node name="TimetravelPuzzle" parent="." node_paths=PackedStringArray("players") instance=ExtResource("19_q40ro")]
+players = [NodePath("../Player_1"), NodePath("../Player_2")]
 
-[node name="TTPineapple" parent="TimetravelPuzzle" index="0" node_paths=PackedStringArray("player1", "player2")]
-position = Vector2(812, 55)
-collision_layer = 3
-player1 = NodePath("../../Player_1")
-player2 = NodePath("../../Player_2")
+[node name="Pineapple1" parent="TimetravelPuzzle" index="0"]
+position = Vector2(746, 65)
 
-[node name="TTPineapple2" parent="TimetravelPuzzle" index="1" node_paths=PackedStringArray("player1", "player2")]
-position = Vector2(1099, 276)
-collision_layer = 3
-player1 = NodePath("../../Player_1")
-player2 = NodePath("../../Player_2")
+[node name="Pineapple2" parent="TimetravelPuzzle" index="1"]
+position = Vector2(888, 65)
 
-[node name="TTPineapple3" parent="TimetravelPuzzle" index="2" node_paths=PackedStringArray("player1", "player2")]
-position = Vector2(1088, 63)
-collision_layer = 3
-player1 = NodePath("../../Player_1")
-player2 = NodePath("../../Player_2")
+[node name="Pineapple3" parent="TimetravelPuzzle" index="2"]
+position = Vector2(1000, 33)
 
-[node name="TTPineapple4" parent="TimetravelPuzzle" index="3" node_paths=PackedStringArray("player1", "player2")]
-position = Vector2(854, 277)
-collision_layer = 3
-player1 = NodePath("../../Player_1")
-player2 = NodePath("../../Player_2")
+[node name="Pineapple4" parent="TimetravelPuzzle" index="3"]
+position = Vector2(725, 273)
 
-[node name="TTPineapple5" parent="TimetravelPuzzle" index="4" node_paths=PackedStringArray("player1", "player2")]
-position = Vector2(962, 112)
-collision_layer = 3
-player1 = NodePath("../../Player_1")
-player2 = NodePath("../../Player_2")
+[node name="Pineapple5" parent="TimetravelPuzzle" index="4"]
+position = Vector2(839, 304)
 
 [node name="Pineapple6" parent="TimetravelPuzzle" index="5"]
 position = Vector2(950, 320)
