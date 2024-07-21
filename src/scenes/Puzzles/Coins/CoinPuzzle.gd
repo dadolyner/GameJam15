@@ -6,7 +6,6 @@ extends Node2D
 @export var player1_speech_bubble: CharacterBody2D
 @export var player2_speech_bubble: CharacterBody2D
 
-
 var current_speaker: CharacterBody2D
 var fail_attempts: int = 3
 var is_in_order: bool = false
@@ -16,9 +15,7 @@ const lines_for_fail: Array[String] = [
 	"Maybe I should collect them in the correct order..."
 ]
 
-
-#To-Do: Display over the character that triggered it
-func _process(delta):
+func _process(_delta):
 	if current_speaker == player1_speech_bubble:
 		DialogManager.update_position(player1_speech_bubble.position)
 	elif current_speaker == player2_speech_bubble:

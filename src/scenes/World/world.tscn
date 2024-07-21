@@ -1045,7 +1045,6 @@ animation = &"run"
 [node name="MovablePlatform" parent="Platforms" instance=ExtResource("17_xsa5p")]
 position = Vector2(213, 204)
 curve = SubResource("Curve2D_c70wc")
-speed = 0.5
 
 [node name="Levers" type="Node2D" parent="Platforms"]
 
@@ -1058,7 +1057,6 @@ player_controls = ExtResource("3_mov5j")
 position = Vector2(209, 391)
 curve = SubResource("Curve2D_7y882")
 script = ExtResource("24_85wu4")
-speed = 0.5
 
 [node name="Portals" type="Node2D" parent="."]
 
