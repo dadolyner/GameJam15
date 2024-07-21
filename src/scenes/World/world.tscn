@@ -1,4 +1,4 @@
-[gd_scene load_steps=91 format=3 uid="uid://cagi5183kdthy"]
+[gd_scene load_steps=93 format=3 uid="uid://cagi5183kdthy"]
 
 [ext_resource type="Texture2D" uid="uid://c1uc31kg0vxa5" path="res://assets/Pixel Adventure/Terrain/Terrain (16x16).png" id="1_osrnh"]
 [ext_resource type="PackedScene" uid="uid://dn5bj8h2j517g" path="res://src/scenes/Player/player.tscn" id="2_hsd2o"]
@@ -22,6 +22,8 @@
 [ext_resource type="PackedScene" uid="uid://dkyw7g6lfuhi0" path="res://src/scenes/Puzzles/Timetravel/TimetravelPuzzle.tscn" id="19_q40ro"]
 [ext_resource type="PackedScene" uid="uid://ckca0a4hkskt7" path="res://src/scenes/Button/button.tscn" id="20_s2l8o"]
 [ext_resource type="Script" path="res://src/scenes/Button/button_upscale.gd" id="21_3uxlr"]
+[ext_resource type="PackedScene" uid="uid://dnb5vcvflr20h" path="res://src/scenes/Lever/lever.tscn" id="23_2rc5a"]
+[ext_resource type="Script" path="res://src/scenes/Platforms/toggle_platform.gd" id="24_85wu4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xx6ad"]
 resource_name = "Terrain"
@@ -1043,11 +1045,6 @@ position = Vector2(211, 140)
 curve = SubResource("Curve2D_c70wc")
 speed = 0.5
 
-[node name="MovablePlatform2" parent="Platforms" instance=ExtResource("17_xsa5p")]
-position = Vector2(158, 260)
-curve = SubResource("Curve2D_7y882")
-speed = 0.5
-
 [node name="CoinPuzzle" parent="." node_paths=PackedStringArray("coin_collection") instance=ExtResource("17_kvpq5")]
 coin_collection = [NodePath("Coin1"), NodePath("Coin2"), NodePath("Coin3"), NodePath("Coin4"), NodePath("Coin5"), NodePath("Coin6")]
 
@@ -1147,6 +1144,19 @@ script = ExtResource("21_3uxlr")
 [node name="Area2D" parent="Buttons/UpscaleButton" index="0"]
 pressed_sprite = 1
 
+[node name="Levers" type="Node2D" parent="."]
+
+[node name="Lever" parent="Levers" node_paths=PackedStringArray("player") instance=ExtResource("23_2rc5a")]
+position = Vector2(251, 152)
+player = NodePath("../../Player_1")
+player_controls = ExtResource("3_mov5j")
+
+[node name="TogglePlatform" parent="Levers" instance=ExtResource("17_xsa5p")]
+position = Vector2(158, 260)
+curve = SubResource("Curve2D_7y882")
+script = ExtResource("24_85wu4")
+speed = 0.5
+
 [connection signal="body_entered" from="Buttons/UpscaleButton/Area2D" to="Buttons/UpscaleButton" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Buttons/UpscaleButton/Area2D" to="Buttons/UpscaleButton" method="_on_area_2d_body_exited"]
 
@@ -1155,3 +1165,4 @@ pressed_sprite = 1
 [editable path="Buttons/BlueButton"]
 [editable path="Buttons/RedButton"]
 [editable path="Buttons/UpscaleButton"]
+[editable path="Levers/Lever"]

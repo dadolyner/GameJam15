@@ -127,7 +127,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
-"speed": 22.0
+"speed": 20.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iuytt"]
@@ -140,6 +140,7 @@ script = ExtResource("1_cr0vx")
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_8wwxb")
 animation = &"idle"
+autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_iuytt")

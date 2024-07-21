@@ -17,7 +17,6 @@ var amount_of_objects: int = 0
 
 var countup_timer: float = 0.0
 var is_timer_active: bool = false
-
 var was_faster: bool = false
 
 func round_place(num,places):
