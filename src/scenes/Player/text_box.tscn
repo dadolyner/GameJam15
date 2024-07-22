@@ -2,9 +2,10 @@
 
 [ext_resource type="Texture2D" uid="uid://kp3xv1mphr5e" path="res://assets/objects/speech_bubble.png" id="1_bt0qw"]
 [ext_resource type="Script" path="res://src/scenes/Player/text_box.gd" id="1_huhek"]
-[ext_resource type="FontFile" uid="uid://ckc2vx5rrmxen" path="res://assets/CustomFont.ttf" id="2_u2aig"]
+[ext_resource type="FontFile" uid="uid://b3ayherd678c5" path="res://assets/Fonts/PixelOperator8-Bold.ttf" id="3_8m2v6"]
 
 [node name="TextBox" type="MarginContainer"]
+z_index = 4096
 offset_right = 32.0
 offset_bottom = 32.0
 script = ExtResource("1_huhek")
@@ -28,7 +29,8 @@ theme_override_constants/margin_bottom = 8
 [node name="Label" type="Label" parent="MarginContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_u2aig")
+theme_override_fonts/font = ExtResource("3_8m2v6")
+theme_override_font_sizes/font_size = 8
 vertical_alignment = 1
 
 [node name="LetterDisplayTimer" type="Timer" parent="."]

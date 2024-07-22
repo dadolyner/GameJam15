@@ -1,6 +1,8 @@
-[gd_scene load_steps=93 format=3 uid="uid://cagi5183kdthy"]
+[gd_scene load_steps=95 format=3 uid="uid://cagi5183kdthy"]
 
+[ext_resource type="Script" path="res://src/scripts/score.gd" id="1_d6cua"]
 [ext_resource type="Texture2D" uid="uid://c1uc31kg0vxa5" path="res://assets/Pixel Adventure/Terrain/Terrain (16x16).png" id="1_osrnh"]
+[ext_resource type="FontFile" uid="uid://iq5rlx86qvrr" path="res://assets/Fonts/PixelOperator8.ttf" id="2_10saj"]
 [ext_resource type="PackedScene" uid="uid://dn5bj8h2j517g" path="res://src/scenes/Player/player.tscn" id="2_hsd2o"]
 [ext_resource type="Resource" uid="uid://c82fs61bw05df" path="res://resources/PlayerControlls/player_1_controls.tres" id="3_mov5j"]
 [ext_resource type="Resource" uid="uid://cu8eslsgqvdt0" path="res://resources/PlayerControlls/player_2_controls.tres" id="4_1s0o3"]
@@ -1013,6 +1015,19 @@ point_count = 5
 
 [node name="Level_01" type="Node2D"]
 position = Vector2(26, -5)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("1_d6cua")
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 7.0
+offset_top = 15.0
+offset_right = 63.0
+offset_bottom = 40.0
+theme_override_fonts/font = ExtResource("2_10saj")
+theme_override_font_sizes/font_size = 32
+text = "
+"
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_2umpe")

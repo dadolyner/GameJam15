@@ -8,6 +8,8 @@ extends Camera2D
 @onready var right_boundry = $RightBoundry
 @onready var left_boundry = $LeftBoundry
 
+@onready var label = $Label
+
 @export var players: Array[CharacterBody2D]
 
 func _ready() -> void:
@@ -46,7 +48,7 @@ func update_camera_position() -> void:
 	var player_1_pos: Vector2 = players[0].global_position
 	var player_2_pos: Vector2 = players[1].global_position
 	var midpoint: Vector2 = (player_1_pos + player_2_pos) / 2
-	
+
 	var tilemap_rect: Rect2i = tilemap.get_used_rect()
 	var tilemap_bottom_right: Vector2 = tilemap.map_to_local(tilemap_rect.position + tilemap_rect.size)
 	var tilemap_center: float = float(tilemap_bottom_right.y) / 2
