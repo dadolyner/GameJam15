@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://c57ge2q1mpnae"]
+
+[ext_resource type="PackedScene" uid="uid://n1w5yuqs35ey" path="res://src/scenes/Checkpoint/Flag.tscn" id="1_f0rbl"]
+[ext_resource type="Script" path="res://src/scenes/Checkpoint/Checkpoints.gd" id="1_iikbo"]
+
+[node name="Checkpoints" type="Node2D" node_paths=PackedStringArray("flags")]
+script = ExtResource("1_iikbo")
+flags = [NodePath("Flag1"), NodePath("Flag2")]
+
+[node name="Flag1" parent="." instance=ExtResource("1_f0rbl")]
+
+[node name="Flag2" parent="." instance=ExtResource("1_f0rbl")]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true

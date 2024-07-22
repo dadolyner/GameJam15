@@ -1,4 +1,4 @@
-[gd_scene load_steps=92 format=3 uid="uid://cagi5183kdthy"]
+[gd_scene load_steps=93 format=3 uid="uid://cagi5183kdthy"]
 
 [ext_resource type="Texture2D" uid="uid://c1uc31kg0vxa5" path="res://assets/Pixel Adventure/Terrain/Terrain (16x16).png" id="1_osrnh"]
 [ext_resource type="PackedScene" uid="uid://dn5bj8h2j517g" path="res://src/scenes/Player/player.tscn" id="2_hsd2o"]
@@ -23,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://dnb5vcvflr20h" path="res://src/scenes/Lever/lever.tscn" id="23_2rc5a"]
 [ext_resource type="PackedScene" uid="uid://cmxsxqwhdao4i" path="res://src/scenes/Puzzles/Portals/PortalPuzzle.tscn" id="23_rwak2"]
 [ext_resource type="Script" path="res://src/scenes/Platforms/toggle_platform.gd" id="24_85wu4"]
+[ext_resource type="PackedScene" uid="uid://c57ge2q1mpnae" path="res://src/scenes/Checkpoint/Checkpoints.tscn" id="24_gp5bt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xx6ad"]
 resource_name = "Terrain"
@@ -1010,7 +1011,8 @@ _data = {
 }
 point_count = 5
 
-[node name="World" type="Node2D"]
+[node name="Level_01" type="Node2D"]
+position = Vector2(26, -5)
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_2umpe")
@@ -1026,7 +1028,6 @@ position = Vector2(27, 211)
 controls = ExtResource("3_mov5j")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player_1"]
-position = Vector2(0, -1)
 scale = Vector2(0.6, 0.6)
 sprite_frames = SubResource("SpriteFrames_oi8fk")
 animation = &"idle"
@@ -1038,7 +1039,7 @@ controls = ExtResource("4_1s0o3")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player_2"]
 scale = Vector2(0.6, 0.6)
 sprite_frames = SubResource("SpriteFrames_2pc8d")
-animation = &"run"
+animation = &"idle"
 
 [node name="Platforms" type="Node2D" parent="."]
 
@@ -1145,10 +1146,10 @@ player = NodePath("../../Player_1")
 player_controls = ExtResource("3_mov5j")
 
 [node name="Portal_1" parent="PortalPuzzle/TogglePortal" index="0"]
-position = Vector2(1025, 209)
+position = Vector2(1062, 209)
 
 [node name="Portal_2" parent="PortalPuzzle/TogglePortal" index="1"]
-position = Vector2(1201, 209)
+position = Vector2(1156, 209)
 
 [node name="Lever" parent="PortalPuzzle/TogglePortal" index="2" node_paths=PackedStringArray("player")]
 position = Vector2(787, 455)
@@ -1173,7 +1174,16 @@ position = Vector2(696, 441)
 [node name="Cherry6" parent="PortalPuzzle/Collectables" index="5"]
 position = Vector2(912, 426)
 
+[node name="Checkpoints" parent="." instance=ExtResource("24_gp5bt")]
+
+[node name="Flag1" parent="Checkpoints" index="0"]
+position = Vector2(1255, 206)
+
+[node name="Flag2" parent="Checkpoints" index="1"]
+position = Vector2(1253, 446)
+
 [editable path="Platforms/Levers/Lever"]
 [editable path="CoinPuzzle"]
 [editable path="TimetravelPuzzle"]
 [editable path="PortalPuzzle"]
+[editable path="Checkpoints"]

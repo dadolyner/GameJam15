@@ -36,7 +36,11 @@ const regions: Array[Dictionary] = [
 
 const region_one_levels: Array[Dictionary] = [
 	{	
-		"name": "region_01",
-		"scene": "res://src/scenes/game.tscn",
+		"name": "level_01",
+		"scene": "res://src/scenes/World/level_1.tscn",
+	},
+	{	
+		"name": "level_02",
+		"scene": "res://src/scenes/World/level_2.tscn",
 	},
 ]
