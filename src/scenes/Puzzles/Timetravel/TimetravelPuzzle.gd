@@ -71,12 +71,13 @@ func finish_puzzle(pineapple: Area2D):
 			countdown_timer.stop()
 			player_1_label.text = ""
 			player_2_label.text = ""
-			print("CONGRATS, YOU WIN")
+			GameManager.add_points(150)
 		else:
 			was_faster = false
-			print("LOOOOSEEEEEEEEEER")
+			GameManager.add_points(-9000)
 
 func handle_pineapple_pickup(pineapple: Area2D):
+	GameManager.add_points(5)
 	pineapple.visible = false
 	pineapple.set_collision_mask_value(2, 0)
 	pickup_sound.play()
