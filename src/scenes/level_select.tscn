@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://csb1pfaq21rj6"]
+[gd_scene load_steps=20 format=3 uid="uid://csb1pfaq21rj6"]
 
 [ext_resource type="Texture2D" uid="uid://kuo1rbdycuo1" path="res://assets/level_select_regions/Region_1.png" id="1_1nmrw"]
 [ext_resource type="Theme" uid="uid://bacq1pf3p10l4" path="res://assets/TextTheme.tres" id="1_clq5w"]
@@ -17,6 +17,8 @@
 [ext_resource type="BitMap" uid="uid://b5aseb384s2gi" path="res://assets/level_select_regions/Region_5bitmap.bmp" id="10_r4f5l"]
 [ext_resource type="Texture2D" uid="uid://bljdmm5d5vy23" path="res://assets/level_select_regions/Region_4hover.png" id="11_6ogxy"]
 [ext_resource type="Texture2D" uid="uid://deylvxhktq72g" path="res://assets/level_select_regions/Region_5hover.png" id="14_rwo2b"]
+[ext_resource type="Texture2D" uid="uid://dor4ypsilwveh" path="res://assets/level_select_regions/Tutorial_button.png" id="18_d3un4"]
+[ext_resource type="Texture2D" uid="uid://bnmkbjdgtoncf" path="res://assets/level_select_regions/Tutorial_button_hover.png" id="19_hy14l"]
 
 [node name="LevelSelect" type="Control" node_paths=PackedStringArray("regions")]
 layout_mode = 3
@@ -27,7 +29,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_clq5w")
 script = ExtResource("1_y0tko")
-regions = [NodePath("Region1Button"), NodePath("Region2Button"), NodePath("Region3Button"), NodePath("Region4Button"), NodePath("Region5Button")]
+regions = [NodePath("TutorialButton"), NodePath("Region1Button"), NodePath("Region2Button"), NodePath("Region3Button"), NodePath("Region4Button"), NodePath("Region5Button")]
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -59,10 +61,10 @@ anchor_left = 0.532986
 anchor_top = 0.268519
 anchor_right = 0.771701
 anchor_bottom = 0.541667
-offset_left = 43.6666
-offset_top = 24.3333
-offset_right = 43.6666
-offset_bottom = 24.3333
+offset_left = 43.6668
+offset_top = 72.3335
+offset_right = 43.6669
+offset_bottom = 72.3336
 grow_horizontal = 2
 grow_vertical = 2
 texture_normal = ExtResource("1_1nmrw")
@@ -93,10 +95,10 @@ anchor_left = 0.421007
 anchor_top = 0.489198
 anchor_right = 0.766493
 anchor_bottom = 0.819444
-offset_left = 43.6666
-offset_top = 24.3333
-offset_right = 43.6667
-offset_bottom = 24.3334
+offset_left = 43.6668
+offset_top = 72.3335
+offset_right = 43.667
+offset_bottom = 72.3336
 grow_horizontal = 2
 grow_vertical = 2
 texture_normal = ExtResource("2_054jm")
@@ -128,10 +130,10 @@ anchor_left = 0.324653
 anchor_top = 0.328704
 anchor_right = 0.585938
 anchor_bottom = 0.766975
-offset_left = 43.6667
-offset_top = 24.3333
-offset_right = 43.6666
-offset_bottom = 24.3334
+offset_left = 43.6669
+offset_top = 72.3335
+offset_right = 43.6668
+offset_bottom = 72.3336
 grow_horizontal = 2
 grow_vertical = 2
 texture_normal = ExtResource("3_e5mjy")
@@ -162,10 +164,10 @@ anchor_left = 0.227431
 anchor_top = 0.259259
 anchor_right = 0.408854
 anchor_bottom = 0.646605
-offset_left = 43.6667
-offset_top = 24.3333
-offset_right = 43.6667
-offset_bottom = 24.3333
+offset_left = 43.6669
+offset_top = 72.3335
+offset_right = 43.6669
+offset_bottom = 72.3336
 grow_horizontal = 2
 grow_vertical = 2
 texture_normal = ExtResource("4_raoq8")
@@ -197,10 +199,10 @@ anchor_left = 0.174479
 anchor_top = 0.555556
 anchor_right = 0.368056
 anchor_bottom = 0.848765
-offset_left = 43.6667
-offset_top = 24.3333
-offset_right = 43.6667
-offset_bottom = 24.3334
+offset_left = 43.6669
+offset_top = 72.3336
+offset_right = 43.6669
+offset_bottom = 72.3336
 grow_horizontal = 2
 grow_vertical = 2
 texture_normal = ExtResource("5_58ihy")
@@ -225,4 +227,14 @@ scale = Vector2(2, 2)
 text = "5"
 metadata/_edit_use_anchors_ = true
 
+[node name="TutorialButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 560.0
+offset_top = 177.0
+offset_right = 728.0
+offset_bottom = 225.0
+texture_normal = ExtResource("18_d3un4")
+texture_hover = ExtResource("19_hy14l")
+
 [connection signal="pressed" from="Region1Button" to="." method="_on_region_1_button_pressed"]
+[connection signal="pressed" from="TutorialButton" to="." method="_on_tutorial_button_pressed"]

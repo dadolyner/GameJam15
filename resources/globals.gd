@@ -8,6 +8,11 @@ const menu: Dictionary = {
 
 const regions: Array[Dictionary] = [
 	{
+		"name" : "tutorial",
+		"levels": tutorial_level,
+		"disabled": false
+	},
+	{
 		"name" : "region_one",
 		"levels": region_one_levels,
 		"disabled": false
@@ -43,4 +48,15 @@ const region_one_levels: Array[Dictionary] = [
 		"name": "level_02",
 		"scene": "res://src/scenes/World/level_2.tscn",
 	},
+]
+
+const tutorial_level: Array[Dictionary] = [
+	{	
+		"name": "level_01",
+		"scene": "res://src/scenes/World/tutorial.tscn",
+	},
+	{	
+		"name": "level_02",
+		"scene": "res://src/scenes/level_select.tscn",
+	}
 ]
