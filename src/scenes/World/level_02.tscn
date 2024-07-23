@@ -1011,7 +1011,7 @@ _data = {
 }
 point_count = 5
 
-[node name="World" type="Node2D"]
+[node name="Level_02" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_2umpe")
@@ -1176,10 +1176,10 @@ position = Vector2(912, 426)
 [node name="Checkpoints" parent="." instance=ExtResource("24_3gvq5")]
 
 [node name="Flag1" parent="Checkpoints" index="0"]
-position = Vector2(126, 206)
+position = Vector2(375, 206)
 
 [node name="Flag2" parent="Checkpoints" index="1"]
-position = Vector2(129, 446)
+position = Vector2(378, 446)
 
 [editable path="Platforms/Levers/Lever"]
 [editable path="CoinPuzzle"]
