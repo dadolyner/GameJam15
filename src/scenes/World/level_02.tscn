@@ -1179,10 +1179,10 @@ position = Vector2(912, 426)
 [node name="Checkpoints" parent="." instance=ExtResource("24_3gvq5")]
 
 [node name="Flag1" parent="Checkpoints" index="0"]
-position = Vector2(375, 206)
+position = Vector2(1259, 200)
 
 [node name="Flag2" parent="Checkpoints" index="1"]
-position = Vector2(378, 446)
+position = Vector2(1259, 439)
 
 [editable path="Platforms/Levers/Lever"]
 [editable path="CoinPuzzle"]

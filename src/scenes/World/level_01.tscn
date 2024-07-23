@@ -1195,10 +1195,10 @@ position = Vector2(912, 426)
 [node name="Checkpoints" parent="." instance=ExtResource("24_gp5bt")]
 
 [node name="Flag1" parent="Checkpoints" index="0"]
-position = Vector2(142, 206)
+position = Vector2(1259, 199)
 
 [node name="Flag2" parent="Checkpoints" index="1"]
-position = Vector2(140, 446)
+position = Vector2(1257, 439)
 
 [node name="Enemies" type="Node2D" parent="."]
 

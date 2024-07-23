@@ -1038,8 +1038,8 @@ offset_right = 220.0
 offset_bottom = 424.0
 theme_override_fonts/font = ExtResource("3_um8bf")
 theme_override_font_sizes/font_size = 16
-text = "[▲]
-[◄][▼][►]"
+text = "[^]
+[<][v][>]"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -1144,9 +1144,9 @@ vertical_alignment = 1
 [node name="Label_11" type="Label" parent="UI"]
 layout_mode = 0
 offset_left = 2133.0
-offset_top = 187.0
+offset_top = 179.0
 offset_right = 2186.0
-offset_bottom = 195.0
+offset_bottom = 187.0
 theme_override_fonts/font = ExtResource("3_um8bf")
 theme_override_font_sizes/font_size = 8
 text = "HAVE FUN"
@@ -1155,10 +1155,10 @@ vertical_alignment = 1
 
 [node name="Label_12" type="Label" parent="UI"]
 layout_mode = 0
-offset_left = 2133.0
-offset_top = 426.0
-offset_right = 2186.0
-offset_bottom = 434.0
+offset_left = 2136.0
+offset_top = 419.0
+offset_right = 2189.0
+offset_bottom = 427.0
 theme_override_fonts/font = ExtResource("3_um8bf")
 theme_override_font_sizes/font_size = 8
 text = "HAVE FUN"
@@ -1260,9 +1260,9 @@ position = Vector2(1376, 7.62939e-06)
 rotation = -0.00243508
 
 [node name="Flag1" parent="Checkpoints" index="0"]
-position = Vector2(780, 207.908)
+position = Vector2(779.511, 201.899)
 
 [node name="Flag2" parent="Checkpoints" index="1"]
-position = Vector2(780, 447.891)
+position = Vector2(779.926, 441.901)
 
 [editable path="Checkpoints"]
