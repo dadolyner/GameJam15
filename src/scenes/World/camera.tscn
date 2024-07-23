@@ -12,16 +12,9 @@ normal = Vector2(1, 0)
 zoom = Vector2(1.5, 1.5)
 script = ExtResource("1_uuq8n")
 
-[node name="Label" type="Label" parent="."]
-visible = false
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
 [node name="RightBoundry" type="StaticBody2D" parent="."]
 position = Vector2(420, 1)
+collision_layer = 2147483648
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RightBoundry"]
@@ -29,6 +22,7 @@ shape = SubResource("WorldBoundaryShape2D_f3o6n")
 
 [node name="LeftBoundry" type="StaticBody2D" parent="."]
 position = Vector2(-420, 0)
+collision_layer = 2147483648
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LeftBoundry"]

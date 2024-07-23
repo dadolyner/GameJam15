@@ -2,13 +2,11 @@ extends Camera2D
 
 @onready var tilemap: TileMap = $"../TileMap"
 @onready var screen_size: Vector2 = get_viewport_rect().size
-@onready var player_1 = $"../Players/Player_1"
-@onready var player_2 = $"../Players/Player_2"
+@onready var player_1: CharacterBody2D = $"../Players/Player_1"
+@onready var player_2: CharacterBody2D = $"../Players/Player_2"
 
-@onready var right_boundry = $RightBoundry
-@onready var left_boundry = $LeftBoundry
-
-@onready var label = $Label
+@onready var right_boundry: StaticBody2D = $RightBoundry
+@onready var left_boundry: StaticBody2D = $LeftBoundry
 
 @export var players: Array[CharacterBody2D]
 
