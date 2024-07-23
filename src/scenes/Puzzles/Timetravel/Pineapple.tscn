@@ -130,7 +130,8 @@ animations = [{
 "speed": 20.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_iuytt"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_e0oc1"]
+radius = 9.0
 
 [node name="Pineapple" type="Area2D"]
 light_mask = 2
@@ -143,6 +144,6 @@ animation = &"idle"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_iuytt")
+shape = SubResource("CircleShape2D_e0oc1")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

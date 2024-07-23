@@ -20,10 +20,10 @@ func add_activated_flag(flag: Area2D) -> void:
 
 func _on_timer_timeout() -> void:
 	if next_region:
-		current_region += 1
-		current_level = 0
-		get_tree().change_scene_to_file(Globals.regions[current_region].levels[0].scene)
+		Globals._set_current_region(current_region + 1)
+		Globals._set_current_level(0)
+		Globals._load_scene()
 	else:
-		current_level += 1
-		get_tree().change_scene_to_file(Globals.regions[current_region].levels[current_level].scene)
+		Globals._set_current_level(current_level + 1)
+		Globals._load_scene()
 		
