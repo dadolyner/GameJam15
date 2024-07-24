@@ -1,17 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://c0j8rvtj22nkt"]
+[gd_scene load_steps=2 format=3 uid="uid://c0j8rvtj22nkt"]
 
 [ext_resource type="Script" path="res://src/scripts/GameManager.gd" id="1_44tun"]
-[ext_resource type="PackedScene" uid="uid://cagi5183kdthy" path="res://src/scenes/World/level_01.tscn" id="1_buxn3"]
-[ext_resource type="PackedScene" uid="uid://d0n15fv4w3n4l" path="res://src/scenes/World/level_02.tscn" id="2_wctpf"]
 
 [node name="Game" type="Node"]
 
 [node name="GameManager" type="Node" parent="."]
 script = ExtResource("1_44tun")
-
-[node name="Region_01" type="Node2D" parent="."]
-
-[node name="Level_01" parent="Region_01" instance=ExtResource("1_buxn3")]
-position = Vector2(0, 0)
-
-[node name="Level_02" parent="Region_01" instance=ExtResource("2_wctpf")]

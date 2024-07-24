@@ -1117,27 +1117,29 @@ vertical_alignment = 1
 
 [node name="Label_9" type="Label" parent="UI"]
 layout_mode = 0
-offset_left = 1904.0
-offset_top = 99.0
-offset_right = 2034.0
-offset_bottom = 118.0
+offset_left = 1896.0
+offset_top = 98.0
+offset_right = 2044.0
+offset_bottom = 128.0
 theme_override_fonts/font = ExtResource("3_um8bf")
 theme_override_font_sizes/font_size = 8
 text = "THEY ARE ANGRY
-STAY AWAY FROM THEM!"
+STAY AWAY FROM THEM OR
+SHOOT THEM WITH [Q]"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label_10" type="Label" parent="UI"]
 layout_mode = 0
-offset_left = 1904.0
-offset_top = 340.0
-offset_right = 2034.0
-offset_bottom = 359.0
+offset_left = 1893.0
+offset_top = 339.0
+offset_right = 2045.0
+offset_bottom = 369.0
 theme_override_fonts/font = ExtResource("3_um8bf")
 theme_override_font_sizes/font_size = 8
 text = "THEY ARE ANGRY
-STAY AWAY FROM THEM!"
+STAY AWAY FROM THEM OR
+SHOOT THEM WITH [SHIFT]"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -1179,6 +1181,7 @@ players = [NodePath("../Players/Player_1"), NodePath("../Players/Player_2")]
 
 [node name="Player_1" parent="Players" instance=ExtResource("6_yxrgh")]
 position = Vector2(27, 211)
+allowed_to_shoot = true
 controls = ExtResource("7_spgyy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Players/Player_1"]
@@ -1188,6 +1191,8 @@ animation = &"idle"
 
 [node name="Player_2" parent="Players" instance=ExtResource("6_yxrgh")]
 position = Vector2(27, 451)
+bullet_sprite = 1
+allowed_to_shoot = true
 controls = ExtResource("13_5sou7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Players/Player_2"]
@@ -1229,7 +1234,7 @@ script = ExtResource("23_1l5d6")
 position = Vector2(1447, 177)
 
 [node name="Kiwi2" parent="Collectables" instance=ExtResource("23_28fbu")]
-position = Vector2(1615, 149)
+position = Vector2(1610, 159)
 
 [node name="Kiwi3" parent="Collectables" instance=ExtResource("23_28fbu")]
 position = Vector2(1733, 184)

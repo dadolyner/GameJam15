@@ -7,3 +7,4 @@ extends Resource
 @export var jump: String = "p1_jump"
 @export var drop: String = "p1_drop"
 @export var interact: String = "p1_interact"
+@export var shoot: String = "p1_shoot"
