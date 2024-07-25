@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://dn5bj8h2j517g"]
+[gd_scene load_steps=4 format=3 uid="uid://dn5bj8h2j517g"]
 
 [ext_resource type="Script" path="res://src/scenes/Player/player.gd" id="1_ivyjs"]
-[ext_resource type="AudioStream" uid="uid://btbyn1c6utim0" path="res://assets/Pixel Adventure/Sounds/swoosh.mp3" id="3_c8ilj"]
 [ext_resource type="AudioStream" uid="uid://dvm5racorw3ql" path="res://assets/Pixel Adventure/Sounds/jump.wav" id="7_omhf7"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xx8gd"]
@@ -19,18 +18,14 @@ script = ExtResource("1_ivyjs")
 shape = SubResource("CapsuleShape2D_xx8gd")
 one_way_collision = true
 
-[node name="Marker2D" type="Marker2D" parent="."]
-
 [node name="JumpSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_omhf7")
 volume_db = -10.0
 bus = &"SFX"
 
-[node name="ThrowSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_c8ilj")
-volume_db = -10.0
-bus = &"SFX"
+[node name="Marker2D" type="Marker2D" parent="."]
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

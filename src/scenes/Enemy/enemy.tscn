@@ -130,9 +130,9 @@ size = Vector2(10, 14)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8s6lo"]
 size = Vector2(10, 14)
 
-[node name="Enemy" type="CharacterBody2D"]
-collision_layer = 16
-collision_mask = 3
+[node name="Enemy" type="CharacterBody2D" groups=["Enemy"]]
+collision_layer = 512
+collision_mask = 515
 script = ExtResource("1_5ijgx")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

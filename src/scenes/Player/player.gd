@@ -1,10 +1,17 @@
 extends CharacterBody2D
+enum BulletSprite {MOON, SUN}
 
 @onready var player: CharacterBody2D = $"."
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var collision_shape: CollisionShape2D = $CollisionShape2D
 @onready var jump_sound: AudioStreamPlayer = $JumpSound
+@onready var throw_sound: AudioStreamPlayer = $ThrowSound
+@onready var marker_2d: Marker2D = $Marker2D
+@onready var timer: Timer = $Timer
 
+@export var bullet_sprite: BulletSprite
+@export var allowed_to_shoot: bool = false
+@export var time_between_shots: float = 1.0
 @export var controls: PlayerControls = null
 
 const SPEED: float = 100.0
@@ -13,9 +20,12 @@ const MAX_JUMPS: int = 2
 const GRAVITY: float = 900.0
 const FALL_GRAVITY: float = 1300.0
 const INITIAL_SCALE: float = 1.0
+const BULLET_NODE = preload("res://src/scenes/Player/bullet.tscn")
 
 var jump_count: int = 0
 var platform_velocity: float = 0.0
+var bullet_direction: Vector2 = Vector2(1, 0)
+var can_shoot: bool = true
 
 func _physics_process(delta) -> void:
 	var direction = Input.get_axis(controls.move_left, controls.move_right)
@@ -36,6 +46,9 @@ func _physics_process(delta) -> void:
 	if (Input.is_action_just_pressed(controls.drop) && is_on_floor()):
 		drop()
 		
+	if Input.is_action_just_pressed(controls.shoot):
+		shoot()
+		
 	play_player_animation(direction)
 	
 	if direction:
@@ -44,6 +57,7 @@ func _physics_process(delta) -> void:
 		velocity.x = move_toward(velocity.x, 0.0, scaled_velocity * SPEED)
 	
 	platform_velocity = get_platform_velocity().x
+	set_bullet_direction(direction)
 	move_and_slide()
 
 # Non Linear gravity
@@ -96,3 +110,29 @@ func play_player_animation(direction: float) -> void:
 				animated_sprite.play("double_jump")
 			else:
 				animated_sprite.play("jump")
+
+# Shoot mekanik
+func shoot() -> void:
+	if !can_shoot or !allowed_to_shoot:
+		return
+	
+	can_shoot = false
+	timer.start(time_between_shots)
+	var bullet = BULLET_NODE.instantiate()
+	bullet.set_direction(bullet_direction)
+	bullet.global_position = marker_2d.global_position
+	get_parent().add_child(bullet)
+	bullet.set_sprite(bullet_sprite)
+	
+	if (!throw_sound.is_playing()):
+		throw_sound.pitch_scale = randf_range(0.6, 2)
+		throw_sound.play()
+
+func set_bullet_direction(direction: float) -> void:
+	if direction > 0.0:
+		bullet_direction = Vector2(1, 0)
+	elif direction < 0.0:
+		bullet_direction = Vector2(-1, 0)
+
+func _on_timer_timeout() -> void:
+	can_shoot = true

@@ -1,7 +1,7 @@
 extends Node
 
 const menu: Dictionary = {
-	"levels": "res://src/scenes/level_select.tscn",
+	"levels": "res://src/scenes/World/level_select.tscn",
 	"options": "res://src/scenes/options.tscn",
 	"back_to_menu": "res://src/scenes/menu.tscn"
 }
@@ -64,7 +64,7 @@ const tutorial_level: Array[Dictionary] = [
 	},
 	{	
 		"name": "level_02",
-		"scene": "res://src/scenes/level_select.tscn",
+		"scene": "res://src/scenes/World/level_select.tscn",
 	}
 ]
 

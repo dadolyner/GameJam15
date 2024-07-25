@@ -1030,15 +1030,18 @@ position = Vector2(27, 211)
 controls = ExtResource("4_mae6b")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Players/Player_1"]
+position = Vector2(0, -2)
 scale = Vector2(0.6, 0.6)
 sprite_frames = SubResource("SpriteFrames_oi8fk")
 animation = &"idle"
 
 [node name="Player_2" parent="Players" instance=ExtResource("3_joci8")]
 position = Vector2(27, 451)
+bullet_sprite = 1
 controls = ExtResource("10_2tn7t")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Players/Player_2"]
+position = Vector2(0, -2)
 scale = Vector2(0.6, 0.6)
 sprite_frames = SubResource("SpriteFrames_2pc8d")
 animation = &"idle"

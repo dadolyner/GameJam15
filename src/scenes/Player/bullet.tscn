@@ -1,0 +1,67 @@
+[gd_scene load_steps=7 format=3 uid="uid://bhk3oysyiumjv"]
+
+[ext_resource type="Script" path="res://src/scenes/Player/bullet.gd" id="1_xd1ga"]
+[ext_resource type="SpriteFrames" uid="uid://c8jr4etf755fy" path="res://src/scenes/Player/animation.tres" id="2_tp16m"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qo5gq"]
+radius = 17.0
+
+[sub_resource type="Animation" id="Animation_ytjuc"]
+resource_name = "idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+
+[sub_resource type="Animation" id="Animation_bbxc5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cxkuy"]
+_data = {
+"RESET": SubResource("Animation_bbxc5"),
+"idle": SubResource("Animation_ytjuc")
+}
+
+[node name="Bullet" type="Area2D"]
+z_index = 40
+scale = Vector2(0.4, 0.4)
+collision_layer = 512
+collision_mask = 513
+script = ExtResource("1_xd1ga")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1, 1)
+sprite_frames = ExtResource("2_tp16m")
+animation = &"moon"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_qo5gq")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_cxkuy")
+}
+autoplay = "idle"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
