@@ -51,6 +51,10 @@ const region_one_levels: Array[Dictionary] = [
 		"name": "level_02",
 		"scene": "res://src/scenes/World/level_02.tscn"
 	},
+	{	
+		"name": "level_03",
+		"scene": "res://src/scenes/World/level_03.tscn"
+	}
 ]
 
 const tutorial_level: Array[Dictionary] = [
