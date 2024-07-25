@@ -15,6 +15,7 @@ func _ready() -> void:
 	add_camera_target(player_2)
 	set_camera_limits()
 	set_camera_bounds()
+	update_camera_position()
 	
 func _process(_delta) -> void:
 	update_camera_position()

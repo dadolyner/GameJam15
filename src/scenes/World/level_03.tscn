@@ -1,4 +1,4 @@
-[gd_scene load_steps=91 format=3 uid="uid://lvrqnpbkqu7l"]
+[gd_scene load_steps=91 format=3 uid="uid://dvo2v0n7ihkqf"]
 
 [ext_resource type="Texture2D" uid="uid://c1uc31kg0vxa5" path="res://assets/Pixel Adventure/Terrain/Terrain (16x16).png" id="1_phxge"]
 [ext_resource type="PackedScene" uid="uid://c0qalbgmrfq2r" path="res://src/scenes/World/camera.tscn" id="2_5am4a"]
@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://ux41ulmatr4o" path="res://assets/Pixel Adventure/Main Characters/Virtual Guy/Idle (32x32).png" id="7_rtkrb"]
 [ext_resource type="Texture2D" uid="uid://cj47g2u22feso" path="res://assets/Pixel Adventure/Main Characters/Virtual Guy/Jump (32x32).png" id="8_uxw07"]
 [ext_resource type="Texture2D" uid="uid://cssenxwxbqkh1" path="res://assets/Pixel Adventure/Main Characters/Virtual Guy/Run (32x32).png" id="9_i2p8a"]
-[ext_resource type="Resource" path="res://resources/PlayerControlls/player_2_controls.tres" id="10_6r3im"]
+[ext_resource type="Resource" uid="uid://cu8eslsgqvdt0" path="res://resources/PlayerControlls/player_2_controls.tres" id="10_6r3im"]
 [ext_resource type="Texture2D" uid="uid://fy4bcyik5itp" path="res://assets/Pixel Adventure/Main Characters/Mask Dude/Double Jump (32x32).png" id="11_h0omm"]
 [ext_resource type="Texture2D" uid="uid://dgtn2koupgbda" path="res://assets/Pixel Adventure/Main Characters/Mask Dude/Fall (32x32).png" id="12_js8j8"]
 [ext_resource type="Texture2D" uid="uid://8swiagi45wjr" path="res://assets/Pixel Adventure/Main Characters/Mask Dude/Idle (32x32).png" id="13_1svrv"]
