@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://src/scenes/Puzzles/Timetravel/TimetravelPuzzle.gd" id="1_30u5y"]
 [ext_resource type="PackedScene" uid="uid://bqbvjbhatg4xi" path="res://src/scenes/Puzzles/Timetravel/Pineapple.tscn" id="2_8bw0p"]
 [ext_resource type="AudioStream" uid="uid://o0mp0wvfprgg" path="res://assets/Pixel Adventure/Sounds/eating.mp3" id="3_xc48c"]
-[ext_resource type="FontFile" uid="uid://ckc2vx5rrmxen" path="res://assets/CustomFont.ttf" id="4_g82f6"]
+[ext_resource type="FontFile" uid="uid://ckc2vx5rrmxen" path="res://assets/Fonts/CustomFont.ttf" id="4_g82f6"]
 
 [node name="TimetravelPuzzle" type="Node2D" node_paths=PackedStringArray("pineapple_collection")]
 script = ExtResource("1_30u5y")

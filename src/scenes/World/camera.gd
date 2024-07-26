@@ -18,6 +18,7 @@ func _ready() -> void:
 	
 func _process(_delta) -> void:
 	update_camera_position()
+	offset_camera_right()
 
 func add_camera_target(player) -> void:
 	if not player in players:
@@ -62,3 +63,9 @@ func set_camera_bounds() -> void:
 	
 	left_boundry.position.x = position.x - half_screen_width
 	right_boundry.position.x = position.x + half_screen_width
+
+func offset_camera_right() -> void:
+	var half_screen_width: float = (screen_size.x / 2) / zoom.x
+	var left_limit_reached: bool = position.x - half_screen_width <= limit_left
+	if left_limit_reached:
+		position.x = limit_left + half_screen_width + 1
