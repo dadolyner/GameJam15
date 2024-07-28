@@ -9,6 +9,7 @@ extends Camera2D
 @onready var left_boundry: StaticBody2D = $LeftBoundry
 
 @export var players: Array[CharacterBody2D]
+@export var camera_speed: float = 5.0
 
 func _ready() -> void:
 	add_camera_target(player_1)
@@ -16,8 +17,8 @@ func _ready() -> void:
 	set_camera_limits()
 	set_camera_bounds()
 	
-func _process(_delta) -> void:
-	update_camera_position()
+func _process(delta: float) -> void:
+	update_camera_position(delta)
 	offset_camera_right()
 
 func add_camera_target(player) -> void:
@@ -40,7 +41,7 @@ func set_camera_limits() -> void:
 	limit_top = 0
 	limit_bottom = int(bottom_right.y - top_left.y)
 
-func update_camera_position() -> void:
+func update_camera_position(delta: float) -> void:
 	if players.size() < 2:
 		return
 	
@@ -52,10 +53,12 @@ func update_camera_position() -> void:
 	var tilemap_bottom_right: Vector2 = tilemap.map_to_local(tilemap_rect.position + tilemap_rect.size)
 	var tilemap_center: float = float(tilemap_bottom_right.y) / 2
 	
-	position = Vector2(
+	var target_position: Vector2 = Vector2(
 		clamp(midpoint.x, limit_left + float(tilemap_rect.position.x) / 2, limit_right - float(tilemap_rect.position.x) / 2),
 		tilemap_center
 	)
+	
+	position = position.lerp(target_position, camera_speed * delta)
 
 func set_camera_bounds() -> void:
 	var viewport_size: Vector2 = get_viewport().size

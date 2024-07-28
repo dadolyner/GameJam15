@@ -1,30 +1,30 @@
 [gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://c8jr4etf755fy"]
 
-[ext_resource type="Texture2D" uid="uid://dffspkl5onoxh" path="res://assets/objects/potions.png" id="1_gfbsw"]
+[ext_resource type="Texture2D" uid="uid://d2o5pnmgr33l3" path="res://assets/sprites-17x35.png" id="1_xb4ik"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_4h28q"]
-atlas = ExtResource("1_gfbsw")
-region = Rect2(32, 0, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_nbhd2"]
+atlas = ExtResource("1_xb4ik")
+region = Rect2(64, 800, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wb54i"]
-atlas = ExtResource("1_gfbsw")
-region = Rect2(0, 0, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_wfm2t"]
+atlas = ExtResource("1_xb4ik")
+region = Rect2(0, 800, 32, 32)
 
 [resource]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_4h28q")
+"texture": SubResource("AtlasTexture_nbhd2")
 }],
 "loop": true,
-"name": &"moon",
+"name": &"light",
 "speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_wb54i")
+"texture": SubResource("AtlasTexture_wfm2t")
 }],
 "loop": true,
-"name": &"sun",
+"name": &"shadow",
 "speed": 5.0
 }]

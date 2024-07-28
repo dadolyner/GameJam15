@@ -18,7 +18,7 @@ shape = SubResource("RectangleShape2D_s288r")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("2_ky85u")
-animation = &"blue_idle"
+animation = &"light_idle"
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

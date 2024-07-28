@@ -19,8 +19,8 @@ func _on_body_entered(body) -> void:
 
 func set_sprite(sprite: int) -> void:
 	match sprite:
-		0: animated_sprite_2d.play("moon")
-		1: animated_sprite_2d.play("sun")
+		0: animated_sprite_2d.play("light")
+		1: animated_sprite_2d.play("shadow")
 
 func set_direction(bullet_direction: Vector2) -> void:
 	direction = bullet_direction

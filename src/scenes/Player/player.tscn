@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dn5bj8h2j517g"]
+[gd_scene load_steps=6 format=3 uid="uid://dn5bj8h2j517g"]
 
 [ext_resource type="Script" path="res://src/scenes/Player/player.gd" id="1_ivyjs"]
+[ext_resource type="SpriteFrames" uid="uid://d0gexs3s1y7ft" path="res://src/scenes/Player/player_animation.tres" id="2_r4n1s"]
 [ext_resource type="AudioStream" uid="uid://btbyn1c6utim0" path="res://assets/Pixel Adventure/Sounds/swoosh.mp3" id="3_c8ilj"]
 [ext_resource type="AudioStream" uid="uid://dvm5racorw3ql" path="res://assets/Pixel Adventure/Sounds/jump.wav" id="7_omhf7"]
 
@@ -14,6 +15,11 @@ collision_layer = 2
 collision_mask = 2147483651
 floor_constant_speed = true
 script = ExtResource("1_ivyjs")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.6, 0.6)
+sprite_frames = ExtResource("2_r4n1s")
+animation = &"light_fall"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_xx8gd")

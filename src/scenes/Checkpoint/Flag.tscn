@@ -18,8 +18,7 @@ shape = SubResource("RectangleShape2D_q4nr3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("2_xud2m")
-animation = &"deactivate"
+animation = &"light_activate"
 autoplay = "idle"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
-[connection signal="body_exited" from="." to="." method="_on_body_exited"]

@@ -1,6 +1,6 @@
 extends Node
 
-@onready var text_box_scene = preload("res://src/scenes/Player/text_box.tscn")
+@onready var text_box_scene = preload("res://src/scenes/Player/speech_bubble.tscn")
 
 var dialog_lines: Array[String] = []
 var current_line_index = 0

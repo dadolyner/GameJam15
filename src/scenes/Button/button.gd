@@ -1,5 +1,5 @@
 extends Area2D
-enum ButtonSprite {BLUE_IDLE, BLUE_PRESSED, RED_IDLE, RED_PRESSED}
+enum ButtonSprite {SHADOW_IDLE, SHADOW_PRESSED, LIGHT_IDLE, LIGHT_PRESSED }
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $"../AnimatedSprite2D"
 
@@ -17,13 +17,9 @@ func _on_body_exited(_body) -> void:
 
 func get_animation_sprite(sprite: ButtonSprite) -> String:
 	match sprite:
-		ButtonSprite.BLUE_IDLE:
-			return "blue_idle"
-		ButtonSprite.BLUE_PRESSED:
-			return "blue_pressed"
-		ButtonSprite.RED_IDLE:
-			return "red_idle"
-		ButtonSprite.RED_PRESSED:
-			return "red_pressed"
+		0: return "shadow_idle"
+		1: return "shadow_pressed"
+		2: return "light_idle"
+		3: return "light_pressed"
 		_:
 			return ""

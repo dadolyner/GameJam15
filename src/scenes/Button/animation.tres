@@ -1,6 +1,7 @@
-[gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://j6xdgtlrwbvk"]
+[gd_resource type="SpriteFrames" load_steps=7 format=3 uid="uid://j6xdgtlrwbvk"]
 
 [ext_resource type="Texture2D" uid="uid://c1lehaht4jtwe" path="res://assets/Pixel Adventure/Other/ButtonSprites.png" id="1_kmk5n"]
+[ext_resource type="Texture2D" uid="uid://d2o5pnmgr33l3" path="res://assets/sprites-17x35.png" id="2_q7eka"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3tktk"]
 atlas = ExtResource("1_kmk5n")
@@ -10,13 +11,13 @@ region = Rect2(0, 32, 32, 32)
 atlas = ExtResource("1_kmk5n")
 region = Rect2(64, 32, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_tg45y"]
-atlas = ExtResource("1_kmk5n")
-region = Rect2(0, 0, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_w6mov"]
+atlas = ExtResource("2_q7eka")
+region = Rect2(0, 768, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_k36dp"]
-atlas = ExtResource("1_kmk5n")
-region = Rect2(64, 0, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_pv3tq"]
+atlas = ExtResource("2_q7eka")
+region = Rect2(64, 768, 32, 32)
 
 [resource]
 animations = [{
@@ -25,7 +26,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_3tktk")
 }],
 "loop": true,
-"name": &"blue_idle",
+"name": &"light_idle",
 "speed": 5.0
 }, {
 "frames": [{
@@ -33,22 +34,22 @@ animations = [{
 "texture": SubResource("AtlasTexture_a36u1")
 }],
 "loop": true,
-"name": &"blue_pressed",
+"name": &"light_pressed",
 "speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_tg45y")
+"texture": SubResource("AtlasTexture_w6mov")
 }],
 "loop": true,
-"name": &"red_idle",
+"name": &"shadow_idle",
 "speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_k36dp")
+"texture": SubResource("AtlasTexture_pv3tq")
 }],
 "loop": true,
-"name": &"red_pressed",
+"name": &"shadow_pressed",
 "speed": 5.0
 }]

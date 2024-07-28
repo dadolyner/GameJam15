@@ -1,5 +1,6 @@
 extends CharacterBody2D
-enum BulletSprite {MOON, SUN}
+enum PlayerSprite {LIGHT, SHADOW}
+enum BulletSprite {LIGHT, SHADOW}
 
 @onready var player: CharacterBody2D = $"."
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
@@ -9,10 +10,11 @@ enum BulletSprite {MOON, SUN}
 @onready var marker_2d: Marker2D = $Marker2D
 @onready var timer: Timer = $Timer
 
+@export var player_sprite: PlayerSprite
+@export var controls: PlayerControls = null
 @export var bullet_sprite: BulletSprite
 @export var allowed_to_shoot: bool = false
 @export var time_between_shots: float = 1.0
-@export var controls: PlayerControls = null
 
 const SPEED: float = 100.0
 const JUMP_VELOCITY: float = -300.0
@@ -26,6 +28,10 @@ var jump_count: int = 0
 var platform_velocity: float = 0.0
 var bullet_direction: Vector2 = Vector2(1, 0)
 var can_shoot: bool = true
+var current_player_sprite: String
+
+func _ready() -> void:
+	set_player_sprite()
 
 func _physics_process(delta) -> void:
 	var direction = Input.get_axis(controls.move_left, controls.move_right)
@@ -88,6 +94,12 @@ func jump() -> void:
 func drop() -> void:
 	position.y += 2
 
+# Set player sprite
+func set_player_sprite():
+	match player_sprite:
+		0: current_player_sprite = "light"
+		1: current_player_sprite = "shadow"
+
 # Animation
 func play_player_animation(direction: float) -> void:
 	# Flip sprite handler
@@ -99,17 +111,17 @@ func play_player_animation(direction: float) -> void:
 	# Animation handler
 	if is_on_floor():
 		if direction == 0.0:
-			animated_sprite.play("idle")
+			animated_sprite.play(current_player_sprite + "_idle")
 		else:
-			animated_sprite.play("run")
+			animated_sprite.play(current_player_sprite + "_run")
 	else:
 		if velocity.y > 0.0:
-			animated_sprite.play("fall")
+			animated_sprite.play(current_player_sprite + "_fall")
 		else:
 			if jump_count > 1:
-				animated_sprite.play("double_jump")
+				animated_sprite.play(current_player_sprite + "_double_jump")
 			else:
-				animated_sprite.play("jump")
+				animated_sprite.play(current_player_sprite + "_jump")
 
 # Shoot mekanik
 func shoot() -> void:

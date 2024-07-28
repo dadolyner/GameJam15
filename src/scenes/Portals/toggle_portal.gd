@@ -33,8 +33,10 @@ func _on_body_exited(body) -> void:
 
 func get_portal_animation() -> void:
 	if is_portal_active == false:
-		animated_sprite_2d.play("off")
+		match portals.portal_model:
+			0: animated_sprite_2d.play("light_off")
+			1: animated_sprite_2d.play("shadow_off")
 	else:
 		match portals.portal_model:
-			0: animated_sprite_2d.play("moon")
-			1: animated_sprite_2d.play("sun")
+			0: animated_sprite_2d.play("light")
+			1: animated_sprite_2d.play("shadow")

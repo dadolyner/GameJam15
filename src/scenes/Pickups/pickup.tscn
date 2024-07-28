@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://b6ocev7ihikui"]
+
+[ext_resource type="Script" path="res://src/scenes/Pickups/pickup.gd" id="1_tsl7v"]
+[ext_resource type="SpriteFrames" uid="uid://bgpx2uaw1jtu" path="res://src/scenes/Pickups/animation.tres" id="2_ndh0h"]
+[ext_resource type="AudioStream" uid="uid://o0mp0wvfprgg" path="res://assets/Pixel Adventure/Sounds/eating.mp3" id="3_ygiea"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_r76c1"]
+radius = 8.06226
+
+[node name="Collectable" type="Area2D"]
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("1_tsl7v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_r76c1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("2_ndh0h")
+animation = &"collected"
+
+[node name="PickupSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ygiea")
+volume_db = -10.0
+bus = &"SFX"
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,5 +1,5 @@
 extends Node2D
-enum PlayerModel { SHADOW, LIGHT }
+enum PlayerModel { LIGHT, SHADOW }
 
 @export var portal_model: PlayerModel
 @export var portal_active: bool = true

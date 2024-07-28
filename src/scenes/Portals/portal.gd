@@ -9,8 +9,8 @@ var is_over_portal: bool = false
 
 func _ready() -> void:
 	match portals.portal_model:
-		0: animated_sprite_2d.play("shadow")
-		1: animated_sprite_2d.play("light")
+		0: animated_sprite_2d.play("light")
+		1: animated_sprite_2d.play("shadow")
 
 func _process(_delta) -> void:
 	if Input.is_action_just_pressed(portals.player_controls.interact) and is_over_portal:

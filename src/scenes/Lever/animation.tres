@@ -1,30 +1,54 @@
-[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://cdx07ndcf4i1p"]
+[gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://cdx07ndcf4i1p"]
 
-[ext_resource type="Texture2D" uid="uid://bld0shao4mou4" path="res://assets/Pixel Adventure/Other/Lever.png" id="1_tvjyn"]
+[ext_resource type="Texture2D" uid="uid://d2o5pnmgr33l3" path="res://assets/sprites-17x35.png" id="1_8osjj"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_y3ym8"]
-atlas = ExtResource("1_tvjyn")
-region = Rect2(0, 0, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_cn2bq"]
+atlas = ExtResource("1_8osjj")
+region = Rect2(96, 832, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_rjrmd"]
-atlas = ExtResource("1_tvjyn")
-region = Rect2(32, 0, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_vlymf"]
+atlas = ExtResource("1_8osjj")
+region = Rect2(128, 832, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_riays"]
+atlas = ExtResource("1_8osjj")
+region = Rect2(0, 832, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wvoor"]
+atlas = ExtResource("1_8osjj")
+region = Rect2(32, 832, 32, 32)
 
 [resource]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_y3ym8")
+"texture": SubResource("AtlasTexture_cn2bq")
 }],
 "loop": true,
-"name": &"off",
+"name": &"light_off",
 "speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_rjrmd")
+"texture": SubResource("AtlasTexture_vlymf")
 }],
 "loop": true,
-"name": &"on",
+"name": &"light_on",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_riays")
+}],
+"loop": true,
+"name": &"shadow_off",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wvoor")
+}],
+"loop": true,
+"name": &"shadow_on",
 "speed": 5.0
 }]
