@@ -36,10 +36,10 @@ func set_camera_limits() -> void:
 	var top_left: Vector2 = tilemap.map_to_local(map_bounds.position)
 	var bottom_right: Vector2 = tilemap.map_to_local(map_bounds.position + map_bounds.size)
 	
-	limit_right = int(bottom_right.x + (tile_size.x * 4.0))
-	limit_left = int(top_left.x - (tile_size.x * 4.0))
+	limit_right = round(int(bottom_right.x + (tile_size.x * 4.0)))
+	limit_left = round(int(top_left.x - (tile_size.x * 4.0)))
 	limit_top = 0
-	limit_bottom = int(bottom_right.y - top_left.y)
+	limit_bottom = round(int(bottom_right.y - top_left.y))
 
 func update_camera_position(delta: float) -> void:
 	if players.size() < 2:
@@ -54,8 +54,8 @@ func update_camera_position(delta: float) -> void:
 	var tilemap_center: float = float(tilemap_bottom_right.y) / 2
 	
 	var target_position: Vector2 = Vector2(
-		clamp(midpoint.x, limit_left + float(tilemap_rect.position.x) / 2, limit_right - float(tilemap_rect.position.x) / 2),
-		tilemap_center
+		round(clamp(midpoint.x, limit_left + float(tilemap_rect.position.x) / 2, limit_right - float(tilemap_rect.position.x) / 2)),
+		round(tilemap_center)
 	)
 	
 	position = position.lerp(target_position, camera_speed * delta)
@@ -71,4 +71,4 @@ func offset_camera_right() -> void:
 	var half_screen_width: float = (screen_size.x / 2) / zoom.x
 	var left_limit_reached: bool = position.x - half_screen_width <= limit_left
 	if left_limit_reached:
-		position.x = limit_left + half_screen_width + 1
+		position.x = round(limit_left + half_screen_width + 1)

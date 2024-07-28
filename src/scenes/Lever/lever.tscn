@@ -4,6 +4,7 @@
 [ext_resource type="SpriteFrames" uid="uid://cdx07ndcf4i1p" path="res://src/scenes/Lever/animation.tres" id="2_yxgtl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_31w2i"]
+size = Vector2(25, 22.5)
 
 [node name="Lever" type="Area2D"]
 z_index = 20

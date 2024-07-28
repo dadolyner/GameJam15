@@ -6,22 +6,23 @@
 [ext_resource type="AudioStream" uid="uid://dvm5racorw3ql" path="res://assets/Pixel Adventure/Sounds/jump.wav" id="7_omhf7"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xx8gd"]
-radius = 5.0
-height = 14.0
+radius = 11.0
+height = 26.0
 
 [node name="Player" type="CharacterBody2D"]
 z_index = 10
+scale = Vector2(0.6, 0.6)
 collision_layer = 2
 collision_mask = 2147483651
 floor_constant_speed = true
 script = ExtResource("1_ivyjs")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.6, 0.6)
 sprite_frames = ExtResource("2_r4n1s")
-animation = &"light_fall"
+animation = &"light_idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3)
 shape = SubResource("CapsuleShape2D_xx8gd")
 one_way_collision = true
 
