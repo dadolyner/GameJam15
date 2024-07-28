@@ -7,7 +7,7 @@
 [ext_resource type="Resource" uid="uid://c82fs61bw05df" path="res://resources/PlayerControlls/player_1_controls.tres" id="3_mov5j"]
 [ext_resource type="Resource" uid="uid://cu8eslsgqvdt0" path="res://resources/PlayerControlls/player_2_controls.tres" id="4_1s0o3"]
 [ext_resource type="PackedScene" uid="uid://c0qalbgmrfq2r" path="res://src/scenes/World/camera.tscn" id="15_lg08l"]
-[ext_resource type="PackedScene" uid="uid://bx3eegju6crjw" path="res://src/scenes/Platforms/platform.tscn" id="17_xsa5p"]
+[ext_resource type="PackedScene" path="res://src/scenes/Platforms/platform.tscn" id="17_xsa5p"]
 [ext_resource type="PackedScene" uid="uid://dnb5vcvflr20h" path="res://src/scenes/Lever/lever.tscn" id="23_2rc5a"]
 [ext_resource type="Script" path="res://src/scenes/Platforms/toggle_platform.gd" id="24_85wu4"]
 [ext_resource type="PackedScene" uid="uid://c57ge2q1mpnae" path="res://src/scenes/Checkpoint/Checkpoints.tscn" id="24_gp5bt"]
