@@ -49,14 +49,14 @@ controls = ExtResource("10_2tn7t")
 bullet_sprite = 1
 
 [node name="Checkpoints" parent="." instance=ExtResource("24_3gvq5")]
-position = Vector2(943, -161)
 current_level = 1
 
 [node name="Flag1" parent="Checkpoints" index="0"]
-position = Vector2(364, 200)
+position = Vector2(1310, 39)
 
 [node name="Flag2" parent="Checkpoints" index="1"]
-position = Vector2(369, 600)
+position = Vector2(1314, 440)
+flag_sprite = 1
 
 [node name="Collectables_Light" type="Node2D" parent="."]
 

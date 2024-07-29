@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=3 uid="uid://cqiep4pdha7uu"]
+
+[ext_resource type="Script" path="res://src/scenes/GameTimer/timer.gd" id="1_4maam"]
+[ext_resource type="FontFile" uid="uid://iq5rlx86qvrr" path="res://assets/Fonts/PixelOperator8.ttf" id="1_37s38"]
+
+[node name="GameTimer" type="Panel"]
+script = ExtResource("1_4maam")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 179.0
+offset_bottom = 30.0
+
+[node name="Label_1" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_37s38")
+theme_override_font_sizes/font_size = 24
+text = "00:"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Label_2" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_37s38")
+theme_override_font_sizes/font_size = 24
+text = "00."
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Label_3" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_37s38")
+theme_override_font_sizes/font_size = 24
+text = "000"
+horizontal_alignment = 2
+vertical_alignment = 1

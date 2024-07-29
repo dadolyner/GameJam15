@@ -1,6 +1,7 @@
 extends Node
 
 var score: int = 0
+var current_level_points: int = 0
 var current_speaker: CharacterBody2D
 var what_is_being_said: Array[String]
 var only_one_tutorial_message: bool = false
@@ -61,3 +62,9 @@ func get_speaker() -> CharacterBody2D:
 
 func set_speaker(speaker: CharacterBody2D) -> void:
 	current_speaker = speaker
+	
+func set_current_level_points(points: int) -> void:
+	current_level_points = points
+	
+func reset_current_level_points() -> void:
+	score = current_level_points

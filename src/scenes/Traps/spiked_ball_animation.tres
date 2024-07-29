@@ -1,0 +1,30 @@
+[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://drm500se5286o"]
+
+[ext_resource type="Texture2D" uid="uid://d2o5pnmgr33l3" path="res://assets/sprites-17x35.png" id="1_guiqq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_glvhu"]
+atlas = ExtResource("1_guiqq")
+region = Rect2(32, 928, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_83rfl"]
+atlas = ExtResource("1_guiqq")
+region = Rect2(0, 928, 32, 32)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_glvhu")
+}],
+"loop": true,
+"name": &"light_spiked_ball",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_83rfl")
+}],
+"loop": true,
+"name": &"shadow_spiked_ball",
+"speed": 5.0
+}]

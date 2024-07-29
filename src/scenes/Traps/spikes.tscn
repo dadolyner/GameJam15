@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://dep4euqm7ti8g"]
+
+[ext_resource type="Script" path="res://src/scenes/Traps/spikes.gd" id="1_2gmnp"]
+[ext_resource type="PackedScene" uid="uid://dfaro8xkqeh06" path="res://src/scenes/Killzone/killzone.tscn" id="1_dxwco"]
+[ext_resource type="SpriteFrames" uid="uid://bggmqg2vrle6v" path="res://src/scenes/Traps/spikes_animation.tres" id="3_aw0n1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ghghy"]
+size = Vector2(31, 7)
+
+[node name="Spikes" type="Node2D"]
+script = ExtResource("1_2gmnp")
+
+[node name="Killzone" parent="." instance=ExtResource("1_dxwco")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+position = Vector2(-0.5, 12.5)
+shape = SubResource("RectangleShape2D_ghghy")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("3_aw0n1")
+animation = &"light_spikes"

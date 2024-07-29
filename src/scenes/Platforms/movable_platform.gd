@@ -4,5 +4,8 @@ extends Path2D
 
 @export var speed: float = 100.0
 
+func _ready() -> void:
+	path.progress = 0
+
 func _process(delta) -> void:  
 	path.progress += speed * delta

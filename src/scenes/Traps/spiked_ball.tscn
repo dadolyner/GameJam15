@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://m0f4vk4481xq"]
+
+[ext_resource type="Script" path="res://src/scenes/Traps/spiked_ball.gd" id="1_mq4tr"]
+[ext_resource type="PackedScene" uid="uid://dfaro8xkqeh06" path="res://src/scenes/Killzone/killzone.tscn" id="2_hx3ax"]
+[ext_resource type="SpriteFrames" uid="uid://drm500se5286o" path="res://src/scenes/Traps/spiked_ball_animation.tres" id="3_rwoe8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2sid5"]
+radius = 12.0
+
+[node name="SpikedBall" type="Node2D"]
+scale = Vector2(0.6, 0.6)
+script = ExtResource("1_mq4tr")
+
+[node name="Killzone" parent="." instance=ExtResource("2_hx3ax")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+shape = SubResource("CircleShape2D_2sid5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("3_rwoe8")
+animation = &"light_spiked_ball"
