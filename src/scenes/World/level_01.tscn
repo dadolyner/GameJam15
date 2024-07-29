@@ -199,6 +199,7 @@ position = Vector2(752, 143)
 position = Vector2(209, 391)
 curve = SubResource("Curve2D_7y882")
 script = ExtResource("24_85wu4")
+speed = 60.0
 
 [node name="PathFollow2D" parent="ShadowPlatforms/Toggle/TogglePlatform" index="0"]
 position = Vector2(-55.6564, -80.2062)
