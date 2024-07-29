@@ -31,6 +31,10 @@ window/stretch/aspect="expand"
 window/transparent_background=false
 window/defaults/default_clear_color=Color(0.3, 0.3, 0.3, 1)
 
+[editor]
+
+movie_writer/movie_file="L:/GameJamExports/preview1.avi"
+
 [editor_plugins]
 
 enabled=PackedStringArray()
