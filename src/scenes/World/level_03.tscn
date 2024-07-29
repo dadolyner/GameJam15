@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cmxsxqwhdao4i" path="res://src/scenes/Puzzles/Portals/PortalPuzzle.tscn" id="19_5e4yi"]
 [ext_resource type="PackedScene" uid="uid://byxs04wx38q84" path="res://src/scenes/Enemy/enemy.tscn" id="19_qn8qh"]
 [ext_resource type="PackedScene" uid="uid://lcgh1nqk1rie" path="res://src/scenes/Portals/portal.tscn" id="20_2xfmk"]
-[ext_resource type="PackedScene" uid="uid://bx3eegju6crjw" path="res://src/scenes/Platforms/platform.tscn" id="20_asji8"]
+[ext_resource type="PackedScene" path="res://src/scenes/Platforms/platform.tscn" id="20_asji8"]
 [ext_resource type="PackedScene" uid="uid://dnb5vcvflr20h" path="res://src/scenes/Lever/lever.tscn" id="20_m6wvo"]
 [ext_resource type="Script" path="res://src/scenes/Platforms/toggle_platform.gd" id="22_da7bu"]
 [ext_resource type="PackedScene" uid="uid://c57ge2q1mpnae" path="res://src/scenes/Checkpoint/Checkpoints.tscn" id="24_o4gge"]
