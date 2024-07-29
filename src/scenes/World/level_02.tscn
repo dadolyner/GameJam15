@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://d0n15fv4w3n4l"]
+[gd_scene load_steps=11 format=3 uid="uid://d0n15fv4w3n4l"]
 
 [ext_resource type="TileSet" uid="uid://cnvxti7ja3x4j" path="res://src/scenes/World/tileset.tres" id="1_2nvkd"]
 [ext_resource type="Script" path="res://src/scripts/score.gd" id="1_8ie24"]
 [ext_resource type="PackedScene" uid="uid://c0qalbgmrfq2r" path="res://src/scenes/World/camera.tscn" id="2_7ahsx"]
 [ext_resource type="FontFile" uid="uid://iq5rlx86qvrr" path="res://assets/Fonts/PixelOperator8.ttf" id="2_ch6qv"]
 [ext_resource type="PackedScene" uid="uid://dn5bj8h2j517g" path="res://src/scenes/Player/player.tscn" id="3_joci8"]
+[ext_resource type="PackedScene" uid="uid://cqiep4pdha7uu" path="res://src/scenes/GameTimer/timer.tscn" id="3_jtokl"]
 [ext_resource type="Resource" uid="uid://c82fs61bw05df" path="res://resources/PlayerControlls/player_1_controls.tres" id="4_mae6b"]
 [ext_resource type="PackedScene" uid="uid://b6ocev7ihikui" path="res://src/scenes/Pickups/pickup.tscn" id="9_icgie"]
 [ext_resource type="Resource" uid="uid://cu8eslsgqvdt0" path="res://resources/PlayerControlls/player_2_controls.tres" id="10_2tn7t"]
@@ -23,15 +24,21 @@ layer_1/tile_data = PackedInt32Array(1900545, 458752, 4, 1900546, 458752, 4, 190
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 script = ExtResource("1_8ie24")
 
-[node name="Label" type="Label" parent="CanvasLayer"]
-offset_left = 7.0
-offset_top = 15.0
-offset_right = 63.0
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_right = 40.0
 offset_bottom = 40.0
+scale = Vector2(4.72, 1.48)
+color = Color(0.266667, 0.266667, 0.266667, 0.745098)
+
+[node name="Timer" parent="CanvasLayer" instance=ExtResource("3_jtokl")]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_top = 33.0
+offset_right = 56.0
+offset_bottom = 65.0
 theme_override_fonts/font = ExtResource("2_ch6qv")
-theme_override_font_sizes/font_size = 32
-text = "
-"
+theme_override_font_sizes/font_size = 24
+text = "0"
 
 [node name="Camera" parent="." node_paths=PackedStringArray("players") instance=ExtResource("2_7ahsx")]
 players = [NodePath("../Players/Player_1"), NodePath("../Players/Player_2")]

@@ -48,17 +48,21 @@ layer_1/tile_data = PackedInt32Array(1900545, 458752, 4, 1900546, 458752, 4, 190
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 script = ExtResource("1_d6cua")
 
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(4.72, 1.48)
+color = Color(0.266667, 0.266667, 0.266667, 0.745098)
+
 [node name="Timer" parent="CanvasLayer" instance=ExtResource("3_8q6ih")]
 
 [node name="Label" type="Label" parent="CanvasLayer"]
-offset_left = 7.0
-offset_top = 35.0
-offset_right = 63.0
-offset_bottom = 67.0
+offset_top = 33.0
+offset_right = 56.0
+offset_bottom = 65.0
 theme_override_fonts/font = ExtResource("2_10saj")
-theme_override_font_sizes/font_size = 32
-text = "
-"
+theme_override_font_sizes/font_size = 24
+text = "0"
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3

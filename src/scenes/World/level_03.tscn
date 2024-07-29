@@ -1,17 +1,18 @@
-[gd_scene load_steps=19 format=3 uid="uid://dvo2v0n7ihkqf"]
+[gd_scene load_steps=20 format=3 uid="uid://dvo2v0n7ihkqf"]
 
 [ext_resource type="Texture2D" uid="uid://c1uc31kg0vxa5" path="res://assets/Pixel Adventure/Terrain/Terrain (16x16).png" id="1_phxge"]
 [ext_resource type="PackedScene" uid="uid://c0qalbgmrfq2r" path="res://src/scenes/World/camera.tscn" id="2_5am4a"]
 [ext_resource type="Script" path="res://src/scripts/score.gd" id="2_243cl"]
 [ext_resource type="FontFile" uid="uid://iq5rlx86qvrr" path="res://assets/Fonts/PixelOperator8.ttf" id="3_b3kki"]
 [ext_resource type="PackedScene" uid="uid://dn5bj8h2j517g" path="res://src/scenes/Player/player.tscn" id="3_kfamx"]
+[ext_resource type="PackedScene" uid="uid://cqiep4pdha7uu" path="res://src/scenes/GameTimer/timer.tscn" id="3_thb0c"]
 [ext_resource type="Resource" uid="uid://c82fs61bw05df" path="res://resources/PlayerControlls/player_1_controls.tres" id="4_1kapr"]
 [ext_resource type="Resource" uid="uid://cu8eslsgqvdt0" path="res://resources/PlayerControlls/player_2_controls.tres" id="10_6r3im"]
 [ext_resource type="PackedScene" uid="uid://vifhbo0hqobj" path="res://src/scenes/Portals/portals.tscn" id="19_4hj2d"]
 [ext_resource type="PackedScene" uid="uid://cmxsxqwhdao4i" path="res://src/scenes/Puzzles/Portals/PortalPuzzle.tscn" id="19_5e4yi"]
 [ext_resource type="PackedScene" uid="uid://byxs04wx38q84" path="res://src/scenes/Enemy/enemy.tscn" id="19_qn8qh"]
 [ext_resource type="PackedScene" uid="uid://lcgh1nqk1rie" path="res://src/scenes/Portals/portal.tscn" id="20_2xfmk"]
-[ext_resource type="PackedScene" path="res://src/scenes/Platforms/platform.tscn" id="20_asji8"]
+[ext_resource type="PackedScene" uid="uid://bx3eegju6crjw" path="res://src/scenes/Platforms/platform.tscn" id="20_asji8"]
 [ext_resource type="PackedScene" uid="uid://dnb5vcvflr20h" path="res://src/scenes/Lever/lever.tscn" id="20_m6wvo"]
 [ext_resource type="Script" path="res://src/scenes/Platforms/toggle_platform.gd" id="22_da7bu"]
 [ext_resource type="PackedScene" uid="uid://c57ge2q1mpnae" path="res://src/scenes/Checkpoint/Checkpoints.tscn" id="24_o4gge"]
@@ -508,15 +509,21 @@ layer_1/tile_data = PackedInt32Array(0, 786432, 0, 65536, 983040, 1, 196608, 983
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 script = ExtResource("2_243cl")
 
-[node name="Label" type="Label" parent="CanvasLayer"]
-offset_left = 7.0
-offset_top = 15.0
-offset_right = 63.0
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_right = 40.0
 offset_bottom = 40.0
+scale = Vector2(4.72, 1.48)
+color = Color(0.266667, 0.266667, 0.266667, 0.745098)
+
+[node name="Timer" parent="CanvasLayer" instance=ExtResource("3_thb0c")]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_top = 33.0
+offset_right = 56.0
+offset_bottom = 65.0
 theme_override_fonts/font = ExtResource("3_b3kki")
-theme_override_font_sizes/font_size = 32
-text = "
-"
+theme_override_font_sizes/font_size = 24
+text = "0"
 
 [node name="Camera" parent="." node_paths=PackedStringArray("players") instance=ExtResource("2_5am4a")]
 position = Vector2(0, -1)

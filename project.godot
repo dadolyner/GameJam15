@@ -21,6 +21,7 @@ Globals="*res://resources/globals.gd"
 DialogManager="*res://src/scripts/DialogManager.gd"
 GameManager="*res://src/scripts/GameManager.gd"
 Signals="*res://resources/signals.gd"
+GameTimer="*res://src/scripts/GameTimer.gd"
 
 [display]
 

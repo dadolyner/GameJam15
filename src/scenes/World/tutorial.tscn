@@ -1,6 +1,5 @@
-[gd_scene load_steps=13 format=3 uid="uid://bs3o6opwia8i"]
+[gd_scene load_steps=12 format=3 uid="uid://bs3o6opwia8i"]
 
-[ext_resource type="PackedScene" uid="uid://cqiep4pdha7uu" path="res://src/scenes/GameTimer/timer.tscn" id="1_m8d22"]
 [ext_resource type="TileSet" uid="uid://cnvxti7ja3x4j" path="res://src/scenes/World/tileset.tres" id="2_n4myt"]
 [ext_resource type="FontFile" uid="uid://iq5rlx86qvrr" path="res://assets/Fonts/PixelOperator8.ttf" id="3_um8bf"]
 [ext_resource type="PackedScene" uid="uid://c0qalbgmrfq2r" path="res://src/scenes/World/camera.tscn" id="5_umxnf"]
@@ -14,19 +13,6 @@
 [ext_resource type="PackedScene" uid="uid://c57ge2q1mpnae" path="res://src/scenes/Checkpoint/Checkpoints.tscn" id="21_drdwh"]
 
 [node name="Tutorial" type="Node2D"]
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="ScoreLabel" type="Label" parent="CanvasLayer"]
-offset_left = 7.0
-offset_top = 42.0
-offset_right = 63.0
-offset_bottom = 74.0
-theme_override_fonts/font = ExtResource("3_um8bf")
-theme_override_font_sizes/font_size = 32
-text = "0"
-
-[node name="Timer" parent="CanvasLayer" instance=ExtResource("1_m8d22")]
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("2_n4myt")
