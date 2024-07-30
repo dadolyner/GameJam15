@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dwcu1r665wylx"]
+[gd_scene load_steps=7 format=3 uid="uid://dwcu1r665wylx"]
 
 [ext_resource type="Script" path="res://src/scripts/menu.gd" id="1_g0knv"]
 [ext_resource type="FontFile" uid="uid://ckc2vx5rrmxen" path="res://assets/Fonts/CustomFont.ttf" id="1_vxhyc"]
 [ext_resource type="VideoStream" path="res://assets/Shadowbond.ogv" id="3_c2msa"]
+[ext_resource type="Texture2D" uid="uid://5yhsuwlijkd8" path="res://assets/Shadowbond.png" id="4_4cmj5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_frkq8"]
 bg_color = Color(0.6, 0.6, 0.6, 0.160784)
@@ -23,6 +24,13 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_c4um7")
 script = ExtResource("1_g0knv")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.792157)
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("4_4cmj5")
 
 [node name="IntroVideo" type="MarginContainer" parent="."]
 layout_mode = 1
