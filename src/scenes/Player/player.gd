@@ -1,6 +1,7 @@
 extends CharacterBody2D
 enum PlayerSprite {LIGHT, SHADOW}
 enum BulletSprite {LIGHT, SHADOW}
+enum PlayerIndex {PLAYER_ONE, PLAYER_TWO}
 
 @onready var player: CharacterBody2D = $"."
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
@@ -10,6 +11,7 @@ enum BulletSprite {LIGHT, SHADOW}
 @onready var marker_2d: Marker2D = $Marker2D
 @onready var timer: Timer = $Timer
 
+@export var player_index: PlayerIndex
 @export var player_sprite: PlayerSprite
 @export var controls: PlayerControls = null
 @export var bullet_sprite: BulletSprite
@@ -30,16 +32,30 @@ var bullet_direction: Vector2 = Vector2(1, 0)
 var can_shoot: bool = true
 var current_player_sprite: String
 
+var can_shift = false
+var shift_delay = 0.2
+var shift_timer = 0.0
+
 func _ready() -> void:
 	set_player_sprite()
 
-func _physics_process(delta) -> void:
-	var direction = Input.get_axis(controls.move_left, controls.move_right)
-	var scaled_velocity = get_scaled_velocity(player.scale)
-	
+func _physics_process(delta) -> void:	
 	if not is_on_floor():
 		velocity.y += get_gravity(velocity) * delta
 		
+	# Handle player swapping
+	if Globals.current_player != player_index:
+		animated_sprite.play(current_player_sprite + "_fall")
+		if is_on_floor():
+			velocity.x = 0
+			velocity.y = 0
+			animated_sprite.play(current_player_sprite + "_idle")
+		move_and_slide()
+		return
+		
+	var direction = Input.get_axis(controls.move_left, controls.move_right)
+	var scaled_velocity = get_scaled_velocity(player.scale)
+	
 	if is_on_floor():
 		jump_count = 0
 		
@@ -55,6 +71,11 @@ func _physics_process(delta) -> void:
 	if Input.is_action_just_pressed(controls.shoot):
 		shoot()
 		
+	if Input.is_action_just_pressed(controls.shift) and can_shift:
+		Globals._shift_players()
+		can_shift = false
+		shift_timer = shift_delay
+		
 	play_player_animation(direction)
 	
 	if direction:
@@ -63,6 +84,7 @@ func _physics_process(delta) -> void:
 		velocity.x = move_toward(velocity.x, 0.0, scaled_velocity * SPEED)
 	
 	platform_velocity = get_platform_velocity().x
+	update_shift_timer(delta)
 	set_bullet_direction(direction)
 	move_and_slide()
 
@@ -148,3 +170,10 @@ func set_bullet_direction(direction: float) -> void:
 
 func _on_timer_timeout() -> void:
 	can_shoot = true
+
+func update_shift_timer(delta: float) -> void:
+	if not can_shift:
+		shift_timer -= delta
+		if shift_timer <= 0:
+			can_shift = true
+			shift_timer = 0

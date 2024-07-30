@@ -9,6 +9,8 @@ const menu: Dictionary = {
 var current_region: int = 0
 var current_level: int = 0
 
+var current_player: int = 0
+
 const regions: Array[Dictionary] = [
 	{
 		"name" : "tutorial",
@@ -72,3 +74,9 @@ func _set_current_level(level: int) -> void:
 
 func _load_scene() -> void:
 	get_tree().change_scene_to_file(Globals.regions[current_region].levels[current_level].scene)
+
+func _shift_players() -> void:
+	if current_player == 0:
+		current_player = 1
+	else:
+		current_player = 0

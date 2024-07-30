@@ -8,3 +8,4 @@ extends Resource
 @export var drop: String = "p1_drop"
 @export var interact: String = "p1_interact"
 @export var shoot: String = "p1_shoot"
+@export var shift: String = "p1_shift"

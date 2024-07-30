@@ -13,7 +13,8 @@ func _ready() -> void:
 		1: animated_sprite_2d.play("shadow")
 
 func _process(_delta) -> void:
-	if Input.is_action_just_pressed(portals.player_controls.interact) and is_over_portal:
+	var active_player = Globals.current_player == portals.player.player_index
+	if Input.is_action_just_pressed(portals.player_controls.interact) and is_over_portal and active_player:
 		portals.player.position = portal_target.position
 
 func _on_body_entered(body: Node) -> void:

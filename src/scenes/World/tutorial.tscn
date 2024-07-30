@@ -43,14 +43,14 @@ vertical_alignment = 1
 
 [node name="Label_2" type="Label" parent="UI"]
 layout_mode = 0
-offset_left = 94.0
-offset_top = 375.0
-offset_right = 220.0
-offset_bottom = 424.0
+offset_left = 47.0
+offset_top = 366.0
+offset_right = 263.0
+offset_bottom = 405.0
 theme_override_fonts/font = ExtResource("3_um8bf")
 theme_override_font_sizes/font_size = 16
-text = "[^]
-[<][v][>]"
+text = "[SHIFT]
+TO SWAP CONTROLS"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -92,13 +92,13 @@ vertical_alignment = 1
 
 [node name="Label_6" type="Label" parent="UI"]
 layout_mode = 0
-offset_left = 836.0
+offset_left = 859.0
 offset_top = 411.0
-offset_right = 920.0
+offset_right = 901.0
 offset_bottom = 427.0
 theme_override_fonts/font = ExtResource("3_um8bf")
 theme_override_font_sizes/font_size = 16
-text = "[CTRL]"
+text = "[E]"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -150,7 +150,7 @@ theme_override_fonts/font = ExtResource("3_um8bf")
 theme_override_font_sizes/font_size = 8
 text = "THEY ARE ANGRY
 STAY AWAY FROM THEM OR
-SHOOT THEM WITH [SHIFT]"
+SHOOT THEM WITH [Q]"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -192,6 +192,7 @@ allowed_to_shoot = true
 
 [node name="Player_2" parent="Players" instance=ExtResource("6_yxrgh")]
 position = Vector2(27, 451)
+player_index = 1
 player_sprite = 1
 controls = ExtResource("13_5sou7")
 bullet_sprite = 1

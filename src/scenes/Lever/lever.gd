@@ -19,7 +19,8 @@ func _ready() -> void:
 	animated_sprite_2d.play(off_sprite)
 	
 func _process(_delta) -> void:
-	if Input.is_action_just_pressed(player_controls.interact) and is_close_to_lever:
+	var active_player = Globals.current_player == player.player_index
+	if Input.is_action_just_pressed(player_controls.interact) and is_close_to_lever and active_player:
 		if lever_state == 0:
 			lever_state = 1
 			animated_sprite_2d.play(on_sprite)
