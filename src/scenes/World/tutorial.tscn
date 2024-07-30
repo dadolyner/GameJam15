@@ -43,14 +43,14 @@ vertical_alignment = 1
 
 [node name="Label_2" type="Label" parent="UI"]
 layout_mode = 0
-offset_left = 47.0
-offset_top = 366.0
-offset_right = 263.0
-offset_bottom = 405.0
+offset_left = 44.0
+offset_top = 371.0
+offset_right = 274.0
+offset_bottom = 410.0
 theme_override_fonts/font = ExtResource("3_um8bf")
 theme_override_font_sizes/font_size = 16
 text = "[SHIFT]
-TO SWAP CONTROLS"
+TO SWAP CHARACTER"
 horizontal_alignment = 1
 vertical_alignment = 1
 

@@ -8,8 +8,10 @@ enum PlayerIndex {PLAYER_ONE, PLAYER_TWO}
 @onready var collision_shape: CollisionShape2D = $CollisionShape2D
 @onready var jump_sound: AudioStreamPlayer = $JumpSound
 @onready var throw_sound: AudioStreamPlayer = $ThrowSound
+@onready var teleport_sound: AudioStreamPlayer = $TeleportSound
 @onready var marker_2d: Marker2D = $Marker2D
 @onready var timer: Timer = $Timer
+@onready var player_indicatior: Label = $PlayerIndicatior
 
 @export var player_index: PlayerIndex
 @export var player_sprite: PlayerSprite
@@ -45,6 +47,7 @@ func _physics_process(delta) -> void:
 		
 	# Handle player swapping
 	if Globals.current_player != player_index:
+		player_indicatior.visible = false
 		if is_on_floor():
 			velocity.x = 0
 			velocity.y = 0
@@ -55,6 +58,7 @@ func _physics_process(delta) -> void:
 		
 	var direction = Input.get_axis(controls.move_left, controls.move_right)
 	var scaled_velocity = get_scaled_velocity(player.scale)
+	player_indicatior.visible = true
 	
 	if is_on_floor():
 		jump_count = 0
@@ -75,6 +79,10 @@ func _physics_process(delta) -> void:
 		Globals._shift_players()
 		can_shift = false
 		shift_timer = shift_delay
+		
+		if (!teleport_sound.is_playing()):
+			teleport_sound.pitch_scale = randf_range(0.8, 1.2)
+			teleport_sound.play()
 		
 	play_player_animation(direction)
 	

@@ -1,10 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://dn5bj8h2j517g"]
+[gd_scene load_steps=6 format=3 uid="uid://dn5bj8h2j517g"]
 
 [ext_resource type="Script" path="res://src/scenes/Player/player.gd" id="1_ivyjs"]
 [ext_resource type="SpriteFrames" uid="uid://d0gexs3s1y7ft" path="res://src/scenes/Player/player_animation.tres" id="2_r4n1s"]
 [ext_resource type="AudioStream" uid="uid://btbyn1c6utim0" path="res://assets/Pixel Adventure/Sounds/swoosh.mp3" id="3_c8ilj"]
-[ext_resource type="AudioStream" uid="uid://co4x3p8iqj77f" path="res://assets/Pixel Adventure/Sounds/teleport.mp3" id="5_by32h"]
-[ext_resource type="FontFile" uid="uid://iq5rlx86qvrr" path="res://assets/Fonts/PixelOperator8.ttf" id="6_8yu12"]
 [ext_resource type="AudioStream" uid="uid://dvm5racorw3ql" path="res://assets/Pixel Adventure/Sounds/jump.wav" id="7_omhf7"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xx8gd"]
@@ -19,20 +17,9 @@ collision_mask = 2147483651
 floor_constant_speed = true
 script = ExtResource("1_ivyjs")
 
-[node name="PlayerIndicatior" type="Label" parent="."]
-offset_left = -1.66667
-offset_top = -20.0
-offset_right = 5.33333
-offset_bottom = -12.0
-theme_override_fonts/font = ExtResource("6_8yu12")
-theme_override_font_sizes/font_size = 8
-text = "v"
-horizontal_alignment = 3
-vertical_alignment = 3
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("2_r4n1s")
-animation = &"shadow_idle"
+animation = &"shadow_shift"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 3)
@@ -49,11 +36,6 @@ bus = &"SFX"
 [node name="ThrowSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_c8ilj")
 volume_db = -10.0
-bus = &"SFX"
-
-[node name="TeleportSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_by32h")
-volume_db = -20.0
 bus = &"SFX"
 
 [node name="Timer" type="Timer" parent="."]

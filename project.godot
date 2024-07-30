@@ -29,7 +29,6 @@ GameTimer="*res://src/scripts/GameTimer.gd"
 window/size/viewport_width=1280
 window/size/viewport_height=720
 window/stretch/mode="viewport"
-window/stretch/aspect="expand"
 window/transparent_background=false
 window/defaults/default_clear_color=Color(0.3, 0.3, 0.3, 1)
 

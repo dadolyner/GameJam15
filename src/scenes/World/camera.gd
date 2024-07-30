@@ -11,6 +11,11 @@ extends Camera2D
 @export var players: Array[CharacterBody2D]
 @export var camera_speed: float = 5.0
 
+var rng = RandomNumberGenerator.new()
+var random_strength: float = 10.0
+var shake_strength: float = 0.0
+var shake_fade: float = 30.0
+
 func _ready() -> void:
 	add_camera_target(player_1)
 	add_camera_target(player_2)
@@ -20,6 +25,13 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	update_camera_position(delta)
 	offset_camera_right()
+	
+	if Input.is_action_just_pressed("p1_shift") or Input.is_action_just_pressed("p2_shift"):
+		shake_camera()
+		
+	if shake_strength > 0:
+		shake_strength = lerpf(shake_strength, 0, shake_fade * delta)
+		offset = random_offset()
 
 func add_camera_target(player) -> void:
 	if not player in players:
@@ -54,8 +66,8 @@ func update_camera_position(delta: float) -> void:
 	var tilemap_center: float = float(tilemap_bottom_right.y) / 2
 	
 	var target_position: Vector2 = Vector2(
-		clamp(midpoint.x, limit_left + float(tilemap_rect.position.x) / 2, limit_right - float(tilemap_rect.position.x) / 2),
-		tilemap_center
+		round(clamp(midpoint.x, limit_left + float(tilemap_rect.position.x) / 2, limit_right - float(tilemap_rect.position.x) / 2)),
+		round(tilemap_center)
 	)
 	
 	position = position.lerp(target_position, camera_speed * delta)
@@ -72,3 +84,9 @@ func offset_camera_right() -> void:
 	var left_limit_reached: bool = position.x - half_screen_width <= limit_left
 	if left_limit_reached:
 		position.x = limit_left + half_screen_width + 1
+
+func shake_camera() -> void:
+	shake_strength = random_strength
+
+func random_offset() -> Vector2:
+	return Vector2(rng.randf_range(-shake_strength, shake_strength), rng.randf_range(-shake_strength, shake_strength))

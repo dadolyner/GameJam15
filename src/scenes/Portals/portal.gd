@@ -2,6 +2,7 @@ extends Area2D
 
 @onready var portals: Node2D = $".."
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var teleport_sound: AudioStreamPlayer = $TeleportSound
 
 @export var portal_target: Area2D
 
@@ -16,6 +17,10 @@ func _process(_delta) -> void:
 	var active_player = Globals.current_player == portals.player.player_index
 	if Input.is_action_just_pressed(portals.player_controls.interact) and is_over_portal and active_player:
 		portals.player.position = portal_target.position
+		
+		if (!teleport_sound.is_playing()):
+			teleport_sound.pitch_scale = randf_range(0.4, 0.6)
+			teleport_sound.play()
 
 func _on_body_entered(body: Node) -> void:
 	if body == portals.player:
