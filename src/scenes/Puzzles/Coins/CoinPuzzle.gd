@@ -25,7 +25,7 @@ func pickup_coin(coin: Area2D, body: Node) -> void:
 			coin.set_collision_mask_value(2, 0)
 			coin.get_node("AnimatedSprite2D").play("explosion")
 			if coin_index == len(coin_collection):
-				GameManager.add_points(100)
+				GameManager.add_points(200)
 		else:
 			current_speaker = body
 			reset_coins(body)

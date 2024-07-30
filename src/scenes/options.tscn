@@ -94,21 +94,21 @@ theme = SubResource("Theme_eimjh")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 2
 
 [node name="Player1Controls3" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/HBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 2
+size_flags_vertical = 4
 theme_override_constants/separation = 15
 
 [node name="Player1Label" type="Label" parent="VBoxContainer/HBoxContainer/HBoxContainer/Player1Controls3"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 1
-text = "Player 1:"
+text = "Player Controls:"
 horizontal_alignment = 3
 
 [node name="GridContainer" type="GridContainer" parent="VBoxContainer/HBoxContainer/HBoxContainer/Player1Controls3"]
@@ -146,61 +146,42 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "W"
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 2
-
-[node name="Player2Controls2" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/HBoxContainer2"]
-layout_mode = 2
-size_flags_horizontal = 2
-theme_override_constants/separation = 10
-
-[node name="Player2Label" type="Label" parent="VBoxContainer/HBoxContainer/HBoxContainer2/Player2Controls2"]
-layout_mode = 2
-size_flags_horizontal = 6
-text = "Player 2:"
-
-[node name="GridContainer2" type="GridContainer" parent="VBoxContainer/HBoxContainer/HBoxContainer2/Player2Controls2"]
-layout_mode = 2
-theme_override_constants/h_separation = 15
-columns = 2
-
-[node name="Move left" type="Label" parent="VBoxContainer/HBoxContainer/HBoxContainer2/Player2Controls2/GridContainer2"]
+[node name="Switch" type="Label" parent="VBoxContainer/HBoxContainer/HBoxContainer/Player1Controls3/GridContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
-text = "Move left:"
+text = "Switch player:"
 
-[node name="Move left control" type="Label" parent="VBoxContainer/HBoxContainer/HBoxContainer2/Player2Controls2/GridContainer2"]
+[node name="Switch control" type="Label" parent="VBoxContainer/HBoxContainer/HBoxContainer/Player1Controls3/GridContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
-text = "Arrow left"
+text = "Shift"
 
-[node name="Move right" type="Label" parent="VBoxContainer/HBoxContainer/HBoxContainer2/Player2Controls2/GridContainer2"]
+[node name="Jump control4" type="Label" parent="VBoxContainer/HBoxContainer/HBoxContainer/Player1Controls3/GridContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
-text = "Move right:"
+text = "Interact:"
 
-[node name="Move right control" type="Label" parent="VBoxContainer/HBoxContainer/HBoxContainer2/Player2Controls2/GridContainer2"]
+[node name="Jump control5" type="Label" parent="VBoxContainer/HBoxContainer/HBoxContainer/Player1Controls3/GridContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
-text = "Arrow right"
+text = "E"
 
-[node name="Jump" type="Label" parent="VBoxContainer/HBoxContainer/HBoxContainer2/Player2Controls2/GridContainer2"]
+[node name="Jump control6" type="Label" parent="VBoxContainer/HBoxContainer/HBoxContainer/Player1Controls3/GridContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
-text = "Jump:"
+text = "Shoot:"
 
-[node name="Jump control" type="Label" parent="VBoxContainer/HBoxContainer/HBoxContainer2/Player2Controls2/GridContainer2"]
+[node name="Jump control7" type="Label" parent="VBoxContainer/HBoxContainer/HBoxContainer/Player1Controls3/GridContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
-text = "Arrow up"
+text = "Q"
 
 [node name="BackButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 214.0
-offset_top = 486.0
-offset_right = 322.0
-offset_bottom = 534.0
+offset_left = 211.0
+offset_top = 519.0
+offset_right = 319.0
+offset_bottom = 567.0
 focus_neighbor_top = NodePath("../QuitButton")
 text = "BACK"
 
