@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://dep4euqm7ti8g" path="res://src/scenes/Traps/spikes.tscn" id="14_ipdv3"]
 [ext_resource type="PackedScene" uid="uid://c0qalbgmrfq2r" path="res://src/scenes/World/camera.tscn" id="15_lg08l"]
 [ext_resource type="PackedScene" uid="uid://m0f4vk4481xq" path="res://src/scenes/Traps/spiked_ball.tscn" id="15_no51g"]
-[ext_resource type="PackedScene" path="res://src/scenes/Platforms/platform.tscn" id="17_xsa5p"]
+[ext_resource type="PackedScene" uid="uid://bx3eegju6crjw" path="res://src/scenes/Platforms/platform.tscn" id="17_xsa5p"]
 [ext_resource type="PackedScene" uid="uid://dnb5vcvflr20h" path="res://src/scenes/Lever/lever.tscn" id="23_2rc5a"]
 [ext_resource type="Script" path="res://src/scenes/Platforms/toggle_platform.gd" id="24_85wu4"]
 [ext_resource type="PackedScene" uid="uid://c57ge2q1mpnae" path="res://src/scenes/Checkpoint/Checkpoints.tscn" id="24_gp5bt"]
@@ -140,7 +140,7 @@ collectable_sprite = 5
 points = 20
 
 [node name="Pickup_6" parent="LightPickups" instance=ExtResource("11_m8kpc")]
-position = Vector2(1212, 66)
+position = Vector2(1208, 67)
 collectable_sprite = 5
 points = 20
 
@@ -249,7 +249,7 @@ collectable_sprite = 5
 points = 20
 
 [node name="Pickup_6" parent="ShadowPickups" instance=ExtResource("11_m8kpc")]
-position = Vector2(1244, 313)
+position = Vector2(1240, 309)
 collectable_type = 1
 collectable_sprite = 5
 points = 20
