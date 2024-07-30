@@ -13,7 +13,8 @@ config_version=5
 config/name="GameJam15"
 run/main_scene="res://src/scenes/menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
-config/icon="res://icon.svg"
+boot_splash/image="res://assets/Shadowbond.png"
+config/icon="res://assets/Shadowbond.png"
 
 [autoload]
 
