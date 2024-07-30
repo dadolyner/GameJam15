@@ -45,13 +45,13 @@ func _physics_process(delta) -> void:
 		
 	# Handle player swapping
 	if Globals.current_player != player_index:
-		animated_sprite.play(current_player_sprite + "_fall")
 		if is_on_floor():
 			velocity.x = 0
 			velocity.y = 0
 			animated_sprite.play(current_player_sprite + "_idle")
-		move_and_slide()
-		return
+		else:
+			animated_sprite.play(current_player_sprite + "_fall")
+		return move_and_slide()
 		
 	var direction = Input.get_axis(controls.move_left, controls.move_right)
 	var scaled_velocity = get_scaled_velocity(player.scale)
