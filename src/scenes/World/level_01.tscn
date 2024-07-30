@@ -81,6 +81,7 @@ controls = ExtResource("3_mov5j")
 
 [node name="Player_2" parent="Players" instance=ExtResource("2_hsd2o")]
 position = Vector2(27, 451)
+player_index = 1
 player_sprite = 1
 controls = ExtResource("4_1s0o3")
 bullet_sprite = 1
