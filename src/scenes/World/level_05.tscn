@@ -139,11 +139,11 @@ position = Vector2(1355, 449)
 shape = SubResource("RectangleShape2D_kiu4t")
 
 [node name="Boss" parent="." node_paths=PackedStringArray("relm_markers") instance=ExtResource("10_gc1fe")]
-position = Vector2(1124, 144)
+position = Vector2(1117, 143)
 relm_markers = [NodePath("../RelmMarkers/Light"), NodePath("../RelmMarkers/Shadow")]
 
 [node name="RelmMarkers" type="Node2D" parent="."]
-position = Vector2(428, 0)
+position = Vector2(421, -1)
 
 [node name="Light" type="Marker2D" parent="RelmMarkers"]
 position = Vector2(695, 140)

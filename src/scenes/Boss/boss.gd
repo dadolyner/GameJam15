@@ -40,6 +40,7 @@ func _physics_process(delta) -> void:
 	move_and_slide()
 	
 	if boss_health <= 0:
+		GameTimer.stop_timer()
 		get_tree().change_scene_to_file(Globals.menu.outro)
 	
 func _on_weapon_timer_timeout() -> void:

@@ -48,6 +48,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 stream = ExtResource("3_c2msa")
+volume_db = 10.0
 bus = &"Music"
 
 [node name="SkipButton" type="Button" parent="."]
@@ -112,6 +113,9 @@ layout_mode = 2
 focus_neighbor_top = NodePath("../OptionsButton")
 focus_neighbor_bottom = NodePath("../StartButton")
 text = "QUIT"
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
 
 [connection signal="finished" from="IntroVideo/VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]
 [connection signal="pressed" from="SkipButton" to="." method="_on_skip_button_pressed"]

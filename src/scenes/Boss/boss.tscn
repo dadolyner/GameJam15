@@ -38,6 +38,8 @@ shape = SubResource("RectangleShape2D_8s6lo")
 
 [node name="SwapTimer" type="Timer" parent="."]
 
+[node name="SceneChangeTimer" type="Timer" parent="."]
+
 [node name="ThrowSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_wwwqp")
 volume_db = -10.0

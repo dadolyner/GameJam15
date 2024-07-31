@@ -5,9 +5,16 @@ extends Control
 @onready var margin_container: MarginContainer = $MarginContainer
 @onready var v_box_container: VBoxContainer = $VBoxContainer
 @onready var skip_button: Button = $SkipButton
+@onready var label: Label = $VBoxContainer/Label
 
 func _ready() -> void:
 	start_button.grab_focus()
+	
+	var timer_props = GameTimer.get_timer_props()
+	var minutes = "%02d:" % timer_props.minutes
+	var seconds = "%02d." % timer_props.seconds
+	var miliseconds = "%03d" % timer_props.miliseconds
+	label.text = "Latest run: " + str(minutes) + str(seconds) + str(miliseconds)
 
 func _on_start_button_pressed() -> void:
 	margin_container.visible = false
