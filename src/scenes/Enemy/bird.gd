@@ -10,8 +10,7 @@ const SPEED: float = 60.0
 
 var direction: int = 1
 
-func _physics_process(delta) -> void:
-		
+func _physics_process(_delta) -> void:
 	if raycast_right.is_colliding():
 		direction = -1
 		animated_sprite_2d.flip_h = true
