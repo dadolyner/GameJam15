@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://0odwdc4wk67"]
+
+[ext_resource type="Script" path="res://src/scenes/World/outro.gd" id="1_3etln"]
+[ext_resource type="VideoStream" path="res://assets/ending-cutscenes-1.ogv" id="2_x2ss5"]
+
+[node name="Outro" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_3etln")
+
+[node name="IntroVideo" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1280.0
+offset_bottom = 720.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="IntroVideo"]
+layout_mode = 2
+size_flags_horizontal = 4
+stream = ExtResource("2_x2ss5")
+autoplay = true
+bus = &"Music"
+
+[node name="SkipButton" type="Button" parent="."]
+offset_left = 1042.0
+offset_top = 652.0
+offset_right = 1262.0
+offset_bottom = 700.0
+size_flags_horizontal = 8
+size_flags_vertical = 8
+focus_neighbor_top = NodePath("../VBoxContainer/QuitButton")
+text = "SKIP"
+
+[connection signal="finished" from="IntroVideo/VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]
+[connection signal="pressed" from="SkipButton" to="." method="_on_skip_button_pressed"]

@@ -3,7 +3,8 @@ extends Node
 const menu: Dictionary = {
 	"levels": "res://src/scenes/World/level_select.tscn",
 	"options": "res://src/scenes/options.tscn",
-	"back_to_menu": "res://src/scenes/menu.tscn"
+	"back_to_menu": "res://src/scenes/menu.tscn",
+	"outro": "res://src/scenes/World/outro.tscn"
 }
 
 var current_region: int = 0

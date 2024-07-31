@@ -3,7 +3,7 @@ enum BulletSprite {LIGHT, SHADOW}
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
-const SPEED: float = 200.0
+const SPEED: float = 150.0
 var direction: Vector2
 
 func _physics_process(delta) -> void:

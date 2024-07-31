@@ -39,6 +39,9 @@ func _physics_process(delta) -> void:
 	velocity.x = 0
 	move_and_slide()
 	
+	if boss_health <= 0:
+		get_tree().change_scene_to_file(Globals.menu.outro)
+	
 func _on_weapon_timer_timeout() -> void:
 	shoot()
 	
@@ -63,9 +66,6 @@ func shoot() -> void:
 func take_damage() -> void:
 	boss_health -= 1
 	health.text = str(boss_health)
-	if boss_health <= 0:
-		animated_sprite_2d.play("die")
-		self.queue_free()
 
 func swap():
 	if current_realm == 0:
