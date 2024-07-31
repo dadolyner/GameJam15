@@ -445,8 +445,7 @@ speed = 60.0
 position = Vector2(-132.999, -10.8949)
 
 [node name="AnimatableBody2D" parent="Toggle/TogglePlatform" index="1"]
-position = Vector2(-132.999, -10.895)
-scale = Vector2(1, 1)
+position = Vector2(-132.999, -10.8949)
 
 [node name="Lever" parent="Toggle" node_paths=PackedStringArray("player") instance=ExtResource("17_jxrk1")]
 position = Vector2(982, 149)
