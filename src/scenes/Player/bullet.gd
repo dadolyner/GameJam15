@@ -6,7 +6,7 @@ const SPEED: float = 250.0
 var direction: Vector2
 
 func _ready() -> void:
-	await get_tree().create_timer(1.5).timeout
+	await get_tree().create_timer(2.5).timeout
 	self.queue_free()
 
 func _physics_process(delta) -> void:
@@ -15,6 +15,10 @@ func _physics_process(delta) -> void:
 func _on_body_entered(body) -> void:
 	if body.is_in_group("Enemy"):
 		body.queue_free()
+	
+	if body.is_in_group("Boss"):
+		body.take_damage()
+	
 	self.queue_free()
 
 func set_sprite(sprite: int) -> void:

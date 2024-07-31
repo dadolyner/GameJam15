@@ -1,0 +1,72 @@
+[gd_resource type="SpriteFrames" load_steps=10 format=3 uid="uid://dnapbl178eyqk"]
+
+[ext_resource type="Texture2D" uid="uid://cw12tvim70ktw" path="res://assets/bunny_bullet.png" id="1_0mxgu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ewsku"]
+atlas = ExtResource("1_0mxgu")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u1ek6"]
+atlas = ExtResource("1_0mxgu")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gjxnl"]
+atlas = ExtResource("1_0mxgu")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h3o4i"]
+atlas = ExtResource("1_0mxgu")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kldmx"]
+atlas = ExtResource("1_0mxgu")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gw5k8"]
+atlas = ExtResource("1_0mxgu")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xun76"]
+atlas = ExtResource("1_0mxgu")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cacqd"]
+atlas = ExtResource("1_0mxgu")
+region = Rect2(96, 32, 32, 32)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ewsku")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u1ek6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gjxnl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h3o4i")
+}],
+"loop": true,
+"name": &"light",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kldmx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gw5k8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xun76")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cacqd")
+}],
+"loop": true,
+"name": &"shadow",
+"speed": 10.0
+}]

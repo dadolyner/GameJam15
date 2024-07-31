@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://bdfe5cs2dvk62" path="res://src/scenes/Enemy/bird.tscn" id="11_5pvsj"]
 [ext_resource type="PackedScene" uid="uid://dhesq78eago1g" path="res://src/scenes/Puzzles/Coins/CoinPuzzle.tscn" id="12_2o0qq"]
 [ext_resource type="PackedScene" uid="uid://dkyw7g6lfuhi0" path="res://src/scenes/Puzzles/Timetravel/TimetravelPuzzle.tscn" id="13_hkn3e"]
-[ext_resource type="PackedScene" path="res://src/scenes/Platforms/platform.tscn" id="15_pdtuy"]
+[ext_resource type="PackedScene" uid="uid://bx3eegju6crjw" path="res://src/scenes/Platforms/platform.tscn" id="15_pdtuy"]
 [ext_resource type="Script" path="res://src/scenes/Platforms/toggle_platform.gd" id="16_1miy6"]
 [ext_resource type="PackedScene" uid="uid://dnb5vcvflr20h" path="res://src/scenes/Lever/lever.tscn" id="17_jxrk1"]
 

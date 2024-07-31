@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://cdn2klbbo87dx"]
+
+[ext_resource type="Script" path="res://src/scenes/Boss/boss_bullet.gd" id="1_jfe80"]
+[ext_resource type="SpriteFrames" uid="uid://dnapbl178eyqk" path="res://src/scenes/Boss/bullet_animation.tres" id="2_smn3o"]
+[ext_resource type="PackedScene" uid="uid://dfaro8xkqeh06" path="res://src/scenes/Killzone/killzone.tscn" id="3_5puho"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_des66"]
+radius = 0.0
+height = 0.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hb154"]
+radius = 6.0
+height = 32.0
+
+[node name="BossBullet" type="Area2D" groups=["Enemy"]]
+z_index = 40
+rotation = 1.5708
+scale = Vector2(0.8, 0.8)
+collision_layer = 512
+collision_mask = 515
+script = ExtResource("1_jfe80")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("2_smn3o")
+animation = &"light"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_des66")
+
+[node name="Killzone" parent="." instance=ExtResource("3_5puho")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+shape = SubResource("CapsuleShape2D_hb154")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

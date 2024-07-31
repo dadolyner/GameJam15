@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dn5bj8h2j517g" path="res://src/scenes/Player/player.tscn" id="6_ckcvj"]
 [ext_resource type="Resource" uid="uid://c82fs61bw05df" path="res://resources/PlayerControlls/player_1_controls.tres" id="7_uwtxf"]
 [ext_resource type="Resource" uid="uid://cu8eslsgqvdt0" path="res://resources/PlayerControlls/player_2_controls.tres" id="8_0xf3y"]
-[ext_resource type="PackedScene" uid="uid://c57ge2q1mpnae" path="res://src/scenes/Checkpoint/Checkpoints.tscn" id="9_lcgav"]
+[ext_resource type="PackedScene" uid="uid://ctbwwetrly8nm" path="res://src/scenes/Boss/boss.tscn" id="10_gc1fe"]
 [ext_resource type="Texture2D" uid="uid://d03x1pt3nkq21" path="res://assets/ending_potion.png" id="10_uilew"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lu6if"]
@@ -76,17 +76,6 @@ controls = ExtResource("8_0xf3y")
 bullet_sprite = 1
 allowed_to_shoot = true
 
-[node name="Checkpoints" parent="." instance=ExtResource("9_lcgav")]
-position = Vector2(-771, -163)
-current_level = 3
-
-[node name="Flag1" parent="Checkpoints" index="0"]
-position = Vector2(1324, 198)
-
-[node name="Flag2" parent="Checkpoints" index="1"]
-position = Vector2(1314, 440)
-flag_sprite = 1
-
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D"]
@@ -97,4 +86,15 @@ sprite_frames = SubResource("SpriteFrames_kchcw")
 position = Vector2(1355, 449)
 shape = SubResource("RectangleShape2D_kiu4t")
 
-[editable path="Checkpoints"]
+[node name="Boss" parent="." node_paths=PackedStringArray("relm_markers") instance=ExtResource("10_gc1fe")]
+position = Vector2(1100, 145)
+relm_markers = [NodePath("../RelmMarkers/Light"), NodePath("../RelmMarkers/Shadow")]
+
+[node name="RelmMarkers" type="Node2D" parent="."]
+position = Vector2(404, 1)
+
+[node name="Light" type="Marker2D" parent="RelmMarkers"]
+position = Vector2(695, 140)
+
+[node name="Shadow" type="Marker2D" parent="RelmMarkers"]
+position = Vector2(695, 380)
