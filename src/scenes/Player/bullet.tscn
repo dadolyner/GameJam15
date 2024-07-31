@@ -4,7 +4,7 @@
 [ext_resource type="SpriteFrames" uid="uid://c8jr4etf755fy" path="res://src/scenes/Player/animation.tres" id="2_tp16m"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qo5gq"]
-radius = 17.0
+radius = 12.5
 
 [sub_resource type="Animation" id="Animation_bbxc5"]
 length = 0.001

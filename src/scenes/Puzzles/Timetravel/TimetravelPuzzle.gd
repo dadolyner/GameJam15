@@ -71,10 +71,10 @@ func finish_puzzle(pineapple: Area2D):
 			countdown_timer.stop()
 			player_1_label.text = ""
 			player_2_label.text = ""
-			GameManager.add_points(150)
+			GameManager.add_points(200)
 		else:
 			was_faster = false
-			GameManager.add_points(-9000)
+			GameManager.add_points(-50)
 
 func handle_pineapple_pickup(pineapple: Area2D):
 	GameManager.add_points(5)
